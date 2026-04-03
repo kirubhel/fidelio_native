@@ -1,0 +1,55 @@
+{
+  "metadata": {
+    "title": "All Activities"
+  },
+  "links": [
+    {"rel": "self", "href": "activities.json", "type": "application/opds+json"}
+  ],
+  "publications": [
+    {
+      "metadata": {
+        "@type": "http://schema.org/Game",
+        "title": "Letter Arrangement",
+        "identifier": "https://learningcloud.et/fidelio/activities/1",
+        "language": "en"
+      },
+      "links": [
+        {"rel": "self", "href": "activity1.json", "type": "application/webpub+manifest+json"},
+        {"rel": "http://opds-spec.org/acquisition/open-access", "href": "activity1.html", "type": "text/html"}
+      ],
+      "images": [
+        {"href": "images/offline/letter_arrangement/thumbnail.webp", "type": "image/webp"}
+      ]
+    },
+    {
+      "metadata": {
+        "@type": "http://schema.org/Game",
+        "title": "ፊደል ፍለጋ",
+        "identifier": "https://learningcloud.et/fidelio/activities/2",
+        "language": "am"
+      },
+      "links": [
+        {"rel": "self", "href": "activity2.json", "type": "application/webpub+manifest+json"},
+        {"rel": "http://opds-spec.org/acquisition/open-access", "href": "activity2.html", "type": "text/html"}
+      ],
+      "images": [
+        {"href": "images/offline/am_game/thumbnail.webp", "type": "image/webp"}
+      ]
+    },
+    {
+      "metadata": {
+        "@type": "http://schema.org/Game",
+        "title": "xalayaa qopheessuu",
+        "identifier": "https://learningcloud.et/fidelio/activities/3",
+        "language": "om"
+      },
+      "links": [
+        {"rel": "self", "href": "activity3.json", "type": "application/webpub+manifest+json"},
+        {"rel": "http://opds-spec.org/acquisition/open-access", "href": "activity3.html", "type": "text/html"}
+      ],
+      "images": [
+        {"href": "images/offline/om_game/thumbnail.webp", "type": "image/webp"}
+      ]
+    }
+  ]
+}

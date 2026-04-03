@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "title": "FideliO Activities"
+  },
+  "links": [
+    {"rel": "self", "href": "opds.json", "type": "application/opds+json"}
+  ],
+  "navigation": [
+    {
+      "href": "activities.json", 
+      "title": "All Activities", 
+      "type": "application/opds+json",
+      "icon": "images/logo.png"
+    }
+  ]
+}

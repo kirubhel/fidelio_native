@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "@type": "http://schema.org/Game",
+    "title": "Letter Arrangement",
+    "identifier": "https://learningcloud.et/fidelio/activities/1"
+  },
+  "links": [
+    {"rel": "self", "href": "activity1.json", "type": "application/webpub+manifest+json"}
+  ],
+  "readingOrder": [
+    {"href": "activity1.html", "type": "text/html"}
+  ],
+  "resources": [
+    {"href": "images/offline/letter_arrangement/thumbnail.webp", "type": "image/webp"}
+  ]
+}

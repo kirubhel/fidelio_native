@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "@type": "http://schema.org/Game",
+    "title": "ፊደል ፍለጋ",
+    "identifier": "https://learningcloud.et/fidelio/activities/2"
+  },
+  "links": [
+    {"rel": "self", "href": "activity2.json", "type": "application/webpub+manifest+json"}
+  ],
+  "readingOrder": [
+    {"href": "activity2.html", "type": "text/html"}
+  ],
+  "resources": [
+    {"href": "images/offline/%E1%8A%A3%E1%8B%B0%E1%88%8D_%E1%8D%8D%E1%88%88%E1%8A%AC/thumbnail.webp", "type": "image/webp"}
+  ]
+}

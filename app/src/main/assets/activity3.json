@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "@type": "http://schema.org/Game",
+    "title": "xalayaa qopheessuu",
+    "identifier": "https://learningcloud.et/fidelio/activities/3"
+  },
+  "links": [
+    {"rel": "self", "href": "activity3.json", "type": "application/webpub+manifest+json"}
+  ],
+  "readingOrder": [
+    {"href": "activity3.html", "type": "text/html"}
+  ],
+  "resources": [
+    {"href": "images/offline/om_game/thumbnail.webp", "type": "image/webp"}
+  ]
+}
