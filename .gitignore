@@ -1,0 +1,37 @@
+# Android and Gradle
+.gradle/
+build/
+app/build/
+server/build/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Large Java Heap Dump files
+*.hprof
+
+# IDE settings
+.idea/
+*.iml
+.vscode/
+
+# Local configuration
+local.properties
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Signing files
+*.keystore
+!debug-secret.keystore
+*.jks
+*.p12
+
+# Credentials & environment
+.env*
+google-services.json
+
+# If there is a node project in server
+node_modules/
+dist/
