@@ -73,19 +73,6 @@ class MainActivity : ComponentActivity() {
         handleIntent(intent)
         
         setContent {
-            val permissionsToRequest = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU) {
-                arrayOf(android.Manifest.permission.READ_MEDIA_IMAGES, android.Manifest.permission.READ_MEDIA_AUDIO)
-            } else {
-                arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE)
-            }
-
-            val launcher = androidx.activity.compose.rememberLauncherForActivityResult(
-                androidx.activity.result.contract.ActivityResultContracts.RequestMultiplePermissions()
-            ) { /* Permission Result Handler */ }
-
-            LaunchedEffect(Unit) {
-                launcher.launch(permissionsToRequest)
-            }
 
             val navController = rememberNavController()
             val respectInfo by respectLaunchInfo.collectAsState()
