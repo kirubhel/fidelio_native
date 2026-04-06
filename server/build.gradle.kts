@@ -4,7 +4,7 @@ plugins {
     application
 }
 
-group = "world.respect.fidelio.server"
+group = "world.respect.kokebfidel.server"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -28,7 +28,7 @@ dependencies {
 }
 
 application {
-    mainClass.set("world.respect.fidelio.server.ServerKt")
+    mainClass.set("world.respect.kokebfidel.server.ServerKt")
 }
 
 java {

@@ -1,2 +1,2 @@
-rootProject.name = "FideliONative"
+rootProject.name = "KokebFidelNative"
 include(":app", ":server")

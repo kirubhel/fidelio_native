@@ -1,8 +1,8 @@
-package world.respect.fidelio.ui
+package world.respect.kokebfidel.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import world.respect.fidelio.data.repository.GameRepository
+import world.respect.kokebfidel.data.repository.GameRepository
 
 class GameViewModelFactory(private val repository: GameRepository) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {

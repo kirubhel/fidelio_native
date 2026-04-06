@@ -1,7 +1,7 @@
-package world.respect.fidelio.data.mock
+package world.respect.kokebfidel.data.mock
 
-import world.respect.fidelio.data.models.Game
-import world.respect.fidelio.data.models.Activity
+import world.respect.kokebfidel.data.models.Game
+import world.respect.kokebfidel.data.models.Activity
 
 object GameData {
     val games = listOf(

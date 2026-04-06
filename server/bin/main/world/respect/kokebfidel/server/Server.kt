@@ -1,4 +1,4 @@
-package world.respect.fidelio.server
+package world.respect.kokebfidel.server
 
 import io.ktor.http.*
 import io.ktor.serialization.kotlinx.json.*

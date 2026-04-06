@@ -1,4 +1,4 @@
-package world.respect.fidelio.data.network
+package world.respect.kokebfidel.data.network
 
 import okhttp3.Interceptor
 import okhttp3.Response

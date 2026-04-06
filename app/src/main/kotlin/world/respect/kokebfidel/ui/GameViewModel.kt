@@ -1,4 +1,4 @@
-package world.respect.fidelio.ui
+package world.respect.kokebfidel.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -7,9 +7,9 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
-import world.respect.fidelio.data.database.GameEntity
-import world.respect.fidelio.data.repository.GameRepository
-import world.respect.fidelio.data.models.RespectLaunchInfo
+import world.respect.kokebfidel.data.database.GameEntity
+import world.respect.kokebfidel.data.repository.GameRepository
+import world.respect.kokebfidel.data.models.RespectLaunchInfo
 
 import kotlinx.coroutines.flow.*
 
@@ -39,7 +39,7 @@ import kotlinx.coroutines.flow.*
         }
     }
 
-    private val xapiReporter = world.respect.fidelio.data.network.XapiReporter(okhttp3.OkHttpClient())
+    private val xapiReporter = world.respect.kokebfidel.data.network.XapiReporter(okhttp3.OkHttpClient())
 
     fun saveStars(
         gameId: String, 
@@ -47,7 +47,7 @@ import kotlinx.coroutines.flow.*
         activityId: String, 
         stars: Int, 
         maxStars: Int = 3, 
-        launchInfo: world.respect.fidelio.data.models.RespectLaunchInfo? = null
+        launchInfo: world.respect.kokebfidel.data.models.RespectLaunchInfo? = null
     ) {
         viewModelScope.launch {
             repository.saveProgress(gameId, activityId, stars)

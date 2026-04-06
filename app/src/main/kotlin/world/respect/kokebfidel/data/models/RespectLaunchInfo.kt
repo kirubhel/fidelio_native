@@ -1,4 +1,4 @@
-package world.respect.fidelio.data.models
+package world.respect.kokebfidel.data.models
 
 data class RespectLaunchInfo(
     val auth: String?,

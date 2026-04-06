@@ -1,0 +1,14 @@
+services:
+  kokeb-fidel-metadata:
+    image: kokeb-fidel-metadata:latest
+    container_name: kokeb-fidel-metadata
+    ports:
+      - "8083:8083"
+    restart: unless-stopped
+    networks:
+      - elearning-network
+
+networks:
+  elearning-network:
+    external: true
+    name: e-learning_elearning-network

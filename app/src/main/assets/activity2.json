@@ -2,7 +2,7 @@
   "metadata": {
     "@type": "http://schema.org/Game",
     "title": "ፊደል ፍለጋ",
-    "identifier": "https://learningcloud.et/fidelio/activities/2"
+    "identifier": "https://learningcloud.et/kokebfidel/activities/2"
   },
   "links": [
     {"rel": "self", "href": "activity2.json", "type": "application/webpub+manifest+json"}

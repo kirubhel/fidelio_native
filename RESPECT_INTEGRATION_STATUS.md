@@ -1,4 +1,4 @@
-# FideliO Native - RESPECT Integration Status
+# kokeb fidel Native - RESPECT Integration Status
 
 Project migrated to Mobile Native (Android) as per the integration guide.
 
@@ -21,5 +21,5 @@ Project migrated to Mobile Native (Android) as per the integration guide.
 
 ## Project Resources
 - Manifest: `app/src/main/assets/RESPECT_MANIFEST.json`
-- Activity: `app/src/main/kotlin/world/respect/fidelio/MainActivity.kt`
+- Activity: `app/src/main/kotlin/world/respect/kokebfidel/MainActivity.kt`
 - UI: Jetpack Compose Material3

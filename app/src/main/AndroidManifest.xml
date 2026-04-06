@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="world.respect.fidelio">
+    package="world.respect.kokebfidel">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -18,16 +18,16 @@
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo"
-        android:label="FideliO"
+        android:label="kokeb fidel"
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
-        android:theme="@style/Theme.FideliO"
+        android:theme="@style/Theme.KokebFidel"
         tools:targetApi="31">
         
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.FideliO">
+            android:theme="@style/Theme.KokebFidel">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -39,8 +39,8 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 
-                <data android:scheme="fidelio" android:host="launch" />
-                <data android:scheme="https" android:host="learningcloud.et" android:pathPrefix="/fidelio" />
+                <data android:scheme="kokebfidel" android:host="launch" />
+                <data android:scheme="https" android:host="learningcloud.et" android:pathPrefix="/kokebfidel" />
             </intent-filter>
         </activity>
 

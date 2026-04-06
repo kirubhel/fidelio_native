@@ -1,4 +1,4 @@
-package world.respect.fidelio.data.repository
+package world.respect.kokebfidel.data.repository
 
 import android.content.Context
 import android.util.Log
@@ -14,12 +14,12 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import world.respect.fidelio.data.database.AppDatabase
-import world.respect.fidelio.data.database.GameEntity
-import world.respect.fidelio.data.models.Activity
-import world.respect.fidelio.data.network.RespectApiService
-import world.respect.fidelio.data.network.LibRespectCache
-import world.respect.fidelio.data.network.LibRespectCacheInterceptor
+import world.respect.kokebfidel.data.database.AppDatabase
+import world.respect.kokebfidel.data.database.GameEntity
+import world.respect.kokebfidel.data.models.Activity
+import world.respect.kokebfidel.data.network.RespectApiService
+import world.respect.kokebfidel.data.network.LibRespectCache
+import world.respect.kokebfidel.data.network.LibRespectCacheInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 
@@ -28,7 +28,7 @@ class GameRepository(private val context: Context) {
     
     private val db = Room.databaseBuilder(
         context,
-        AppDatabase::class.java, "respect-fidelio-db"
+        AppDatabase::class.java, "respect-kokebfidel-db"
     )
     .fallbackToDestructiveMigration()
     .build()
@@ -158,7 +158,7 @@ class GameRepository(private val context: Context) {
 
     suspend fun saveProgress(gameId: String, activityId: String, stars: Int) {
         withContext(Dispatchers.IO) {
-            db.progressDao().saveProgress(world.respect.fidelio.data.database.ProgressEntity(activityId, gameId, stars))
+            db.progressDao().saveProgress(world.respect.kokebfidel.data.database.ProgressEntity(activityId, gameId, stars))
             Unit
         }
     }

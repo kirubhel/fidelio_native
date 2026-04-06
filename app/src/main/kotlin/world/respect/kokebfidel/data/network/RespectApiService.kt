@@ -1,4 +1,4 @@
-package world.respect.fidelio.data.network
+package world.respect.kokebfidel.data.network
 
 import retrofit2.Response
 import retrofit2.http.GET

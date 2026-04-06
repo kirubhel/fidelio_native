@@ -1,4 +1,4 @@
-package world.respect.fidelio.data.database
+package world.respect.kokebfidel.data.database
 
 import androidx.room.Dao
 import androidx.room.Database
@@ -12,7 +12,7 @@ import androidx.room.TypeConverter
 import androidx.room.TypeConverters
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import world.respect.fidelio.data.models.Activity
+import world.respect.kokebfidel.data.models.Activity
 
 @Entity(tableName = "games")
 data class GameEntity(

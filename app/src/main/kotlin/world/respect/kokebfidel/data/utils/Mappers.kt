@@ -1,7 +1,7 @@
-package world.respect.fidelio.data.utils
+package world.respect.kokebfidel.data.utils
 
-import world.respect.fidelio.data.database.GameEntity
-import world.respect.fidelio.data.models.Game
+import world.respect.kokebfidel.data.database.GameEntity
+import world.respect.kokebfidel.data.models.Game
 
 fun GameEntity.toDomain(): Game {
     return Game(

@@ -10,7 +10,7 @@
       "metadata": {
         "@type": "http://schema.org/Game",
         "title": "Letter Arrangement",
-        "identifier": "https://learningcloud.et/fidelio/activities/1",
+        "identifier": "https://learningcloud.et/kokebfidel/activities/1",
         "language": "en"
       },
       "links": [
@@ -25,7 +25,7 @@
       "metadata": {
         "@type": "http://schema.org/Game",
         "title": "ፊደል ፍለጋ",
-        "identifier": "https://learningcloud.et/fidelio/activities/2",
+        "identifier": "https://learningcloud.et/kokebfidel/activities/2",
         "language": "am"
       },
       "links": [
@@ -40,7 +40,7 @@
       "metadata": {
         "@type": "http://schema.org/Game",
         "title": "xalayaa qopheessuu",
-        "identifier": "https://learningcloud.et/fidelio/activities/3",
+        "identifier": "https://learningcloud.et/kokebfidel/activities/3",
         "language": "om"
       },
       "links": [

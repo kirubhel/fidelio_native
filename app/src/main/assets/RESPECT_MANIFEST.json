@@ -1,8 +1,8 @@
 {
    "name": {
-      "en-US": "FideliO",
-      "am-ET": "ፊደሊ ኦ",
-      "om-ET": "FideliO"
+      "en-US": "kokeb fidel",
+      "am-ET": "ኮከብ ፊደል",
+      "om-ET": "kokeb fidel"
    },
    "description": {
       "en-US": "Fun educational games for letter arrangement and spelling.",
@@ -13,10 +13,11 @@
    "website": "https://learningcloud.et/",
    "icon": "images/logo.png",
    "learningUnits": "opds.json",
-   "defaultLaunchUri": "fidelio://launch",
+   "defaultLaunchUri": "kokebfidel://launch",
 
    "android": {
-       "packageId": "world.respect.fidelio",
-       "stores": ["https://play.google.com/store/apps/details?id=world.respect.fidelio"]
+       "packageId": "world.respect.kokebfidel",
+       "stores": ["https://play.google.com/store/apps/details?id=world.respect.kokebfidel"],
+       "sourceCode": "https://github.com/kirubhel/kokebfidel_native"
    }
 }

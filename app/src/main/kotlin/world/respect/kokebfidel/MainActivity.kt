@@ -1,5 +1,5 @@
 @file:OptIn(androidx.compose.material3.ExperimentalMaterial3Api::class)
-package world.respect.fidelio
+package world.respect.kokebfidel
 
 import android.content.Intent
 import android.net.Uri
@@ -44,17 +44,17 @@ import coil.request.ImageRequest
 import coil.request.CachePolicy
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
-import world.respect.fidelio.data.mock.GameData
-import world.respect.fidelio.data.models.Activity
-import world.respect.fidelio.data.models.Game
-import world.respect.fidelio.data.models.RespectLaunchInfo
+import world.respect.kokebfidel.data.mock.GameData
+import world.respect.kokebfidel.data.models.Activity
+import world.respect.kokebfidel.data.models.Game
+import world.respect.kokebfidel.data.models.RespectLaunchInfo
 import androidx.lifecycle.ViewModelProvider
-import world.respect.fidelio.ui.GameViewModel
-import world.respect.fidelio.ui.GameViewModelFactory
+import world.respect.kokebfidel.ui.GameViewModel
+import world.respect.kokebfidel.ui.GameViewModelFactory
 import android.speech.tts.TextToSpeech
 import java.util.Locale
-import world.respect.fidelio.data.utils.toDomain
-import world.respect.fidelio.data.repository.GameRepository
+import world.respect.kokebfidel.data.utils.toDomain
+import world.respect.kokebfidel.data.repository.GameRepository
 
 class MainActivity : ComponentActivity() {
     private val TAG = "RESPECT_LAUNCH"
@@ -66,9 +66,9 @@ class MainActivity : ComponentActivity() {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         window.statusBarColor = android.graphics.Color.TRANSPARENT
         
-        val repository = world.respect.fidelio.data.repository.GameRepository(applicationContext)
-        val factory = world.respect.fidelio.ui.GameViewModelFactory(repository)
-        gameViewModel = ViewModelProvider(this, factory)[world.respect.fidelio.ui.GameViewModel::class.java]
+        val repository = world.respect.kokebfidel.data.repository.GameRepository(applicationContext)
+        val factory = world.respect.kokebfidel.ui.GameViewModelFactory(repository)
+        gameViewModel = ViewModelProvider(this, factory)[world.respect.kokebfidel.ui.GameViewModel::class.java]
         
         handleIntent(intent)
         
@@ -662,7 +662,7 @@ fun ConfettiCelebration() {
 }
 
 @Composable
-fun GameScreen(navController: NavController, game: Game, mode: String, index: Int, launchInfo: world.respect.fidelio.data.models.RespectLaunchInfo?, onBack: () -> Unit, onMissionCompleted: (String, Int) -> Unit) {
+fun GameScreen(navController: NavController, game: Game, mode: String, index: Int, launchInfo: world.respect.kokebfidel.data.models.RespectLaunchInfo?, onBack: () -> Unit, onMissionCompleted: (String, Int) -> Unit) {
     val activities = when(mode) {
         "easy" -> game.easyActivities
         "medium" -> game.mediumActivities

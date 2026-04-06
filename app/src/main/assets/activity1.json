@@ -2,7 +2,7 @@
   "metadata": {
     "@type": "http://schema.org/Game",
     "title": "Letter Arrangement",
-    "identifier": "https://learningcloud.et/fidelio/activities/1"
+    "identifier": "https://learningcloud.et/kokebfidel/activities/1"
   },
   "links": [
     {"rel": "self", "href": "activity1.json", "type": "application/webpub+manifest+json"}

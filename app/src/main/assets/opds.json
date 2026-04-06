@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "title": "FideliO Activities"
+    "title": "kokeb fidel Activities"
   },
   "links": [
     {"rel": "self", "href": "opds.json", "type": "application/opds+json"}

@@ -1,4 +1,4 @@
-package world.respect.fidelio.data.network
+package world.respect.kokebfidel.data.network
 
 import android.util.Log
 import okhttp3.MediaType.Companion.toMediaType

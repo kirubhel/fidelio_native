@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "world.respect.fidelio"
+    namespace = "world.respect.kokebfidel"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "world.respect.fidelio"
+        applicationId = "world.respect.kokebfidel"
         minSdk = 24
         targetSdk = 34
         versionCode = 2
