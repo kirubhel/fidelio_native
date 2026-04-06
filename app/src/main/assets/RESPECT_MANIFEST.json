@@ -12,6 +12,7 @@
    "license": "MIT",
    "website": "https://learningcloud.et/",
    "icon": "images/logo.png",
+   "version": "1.1.0",
    "learningUnits": "opds.json",
    "defaultLaunchUri": "kokebfidel://launch",
 
