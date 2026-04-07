@@ -94,7 +94,8 @@ class GameRepository(private val context: Context) {
                             easyActivities = existing?.easyActivities ?: emptyList(),
                             mediumActivities = existing?.mediumActivities ?: emptyList(),
                             hardActivities = existing?.hardActivities ?: emptyList(),
-                            isActive = summary.is_active
+                            isActive = summary.is_active,
+                            timeLimit = summary.time_limit
                         ))
                         
                         if (isDataIncomplete) {
@@ -133,7 +134,14 @@ class GameRepository(private val context: Context) {
                     val detail = response.body()?.data ?: return@withContext
                     val gameData = detail.game_data
                     val levels = gameData["difficultyLevels"] as? Map<*, *>
+                    val settings = gameData["difficultySettings"] as? Map<*, *>
                     
+                    val easySettings = settings?.get("easy") as? Map<*, *>
+                    val mediumSettings = settings?.get("medium") as? Map<*, *>
+                    val hardSettings = settings?.get("hard") as? Map<*, *>
+                    
+                    fun Any?.toInt(): Int? = (this as? Double)?.toInt() ?: (this as? Float)?.toInt() ?: (this as? Int)
+
                     val entity = GameEntity(
                         id = detail.id,
                         title = detail.title,
@@ -145,7 +153,14 @@ class GameRepository(private val context: Context) {
                         easyActivities = flattenActivities(levels?.get("easy")),
                         mediumActivities = flattenActivities(levels?.get("medium")),
                         hardActivities = flattenActivities(levels?.get("hard")),
-                        isActive = detail.is_active
+                        isActive = detail.is_active,
+                        timeLimit = detail.time_limit,
+                        easyTimeLimit = easySettings?.get("timeLimit").toInt(),
+                        mediumTimeLimit = mediumSettings?.get("timeLimit").toInt(),
+                        hardTimeLimit = hardSettings?.get("timeLimit").toInt(),
+                        easyPoints = easySettings?.get("points").toInt(),
+                        mediumPoints = mediumSettings?.get("points").toInt(),
+                        hardPoints = hardSettings?.get("points").toInt()
                     )
                     db.gameDao().insertGame(entity)
                 }

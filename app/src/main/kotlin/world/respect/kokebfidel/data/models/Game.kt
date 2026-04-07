@@ -11,5 +11,12 @@ data class Game(
     val hardActivities: List<Activity>,
     val isActive: Boolean = true,
     val description: String = "",
-    val gameType: Int = 4
+    val gameType: Int = 4,
+    val timeLimit: Int? = null,
+    val easyTimeLimit: Int? = null,
+    val mediumTimeLimit: Int? = null,
+    val hardTimeLimit: Int? = null,
+    val easyPoints: Int? = null,
+    val mediumPoints: Int? = null,
+    val hardPoints: Int? = null
 )

@@ -15,6 +15,13 @@ fun GameEntity.toDomain(): Game {
         easyActivities = easyActivities,
         mediumActivities = mediumActivities,
         hardActivities = hardActivities,
-        isActive = isActive
+        isActive = isActive,
+        timeLimit = timeLimit,
+        easyTimeLimit = easyTimeLimit,
+        mediumTimeLimit = mediumTimeLimit,
+        hardTimeLimit = hardTimeLimit,
+        easyPoints = easyPoints,
+        mediumPoints = mediumPoints,
+        hardPoints = hardPoints
     )
 }

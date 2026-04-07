@@ -23,10 +23,17 @@ data class GameEntity(
     val color: Int,
     val description: String,
     val gameType: Int,
+    val timeLimit: Int? = null,
     val easyActivities: List<Activity>,
     val mediumActivities: List<Activity>,
     val hardActivities: List<Activity>,
-    val isActive: Boolean = true
+    val isActive: Boolean = true,
+    val easyTimeLimit: Int? = null,
+    val mediumTimeLimit: Int? = null,
+    val hardTimeLimit: Int? = null,
+    val easyPoints: Int? = null,
+    val mediumPoints: Int? = null,
+    val hardPoints: Int? = null
 )
 
 @Entity(tableName = "progress")
@@ -82,7 +89,7 @@ class Converters {
     }
 }
 
-@Database(entities = [GameEntity::class, ProgressEntity::class], version = 3, exportSchema = false)
+@Database(entities = [GameEntity::class, ProgressEntity::class], version = 5, exportSchema = false)
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun gameDao(): GameDao

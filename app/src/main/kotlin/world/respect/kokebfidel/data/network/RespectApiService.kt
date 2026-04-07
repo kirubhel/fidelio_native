@@ -26,7 +26,8 @@ data class GameSummaryResponse(
     val course_name: String,
     val grade_name: String,
     val is_active: Boolean,
-    val thumbnail_url: String? = null
+    val thumbnail_url: String? = null,
+    val time_limit: Int? = null
 )
 
 data class GameResponse(
@@ -44,5 +45,6 @@ data class GameDetailResponse(
     val grade_name: String,
     val is_active: Boolean,
     val thumbnail_url: String? = null,
+    val time_limit: Int? = null,
     val game_data: Map<String, Any>
 )

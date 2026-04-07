@@ -1,4 +1,7 @@
-@file:OptIn(androidx.compose.material3.ExperimentalMaterial3Api::class)
+@file:OptIn(
+    androidx.compose.material3.ExperimentalMaterial3Api::class,
+    androidx.compose.foundation.layout.ExperimentalLayoutApi::class
+)
 package world.respect.kokebfidel
 
 import android.content.Intent
@@ -13,6 +16,7 @@ import androidx.compose.animation.*
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
@@ -381,10 +385,15 @@ fun GameCard(game: Game, onSelected: () -> Unit, isFeatured: Boolean) {
             }
             
             AsyncImage(
-                model = thumbnailPath,
+                model = ImageRequest.Builder(LocalContext.current)
+                    .data(thumbnailPath)
+                    .crossfade(true)
+                    .error(R.drawable.logo)
+                    .placeholder(R.drawable.logo)
+                    .build(),
                 contentDescription = game.title,
                 modifier = Modifier.fillMaxSize(),
-                contentScale = ContentScale.Crop
+                contentScale = ContentScale.Fit
             )
             
             // Soft overlay for text readability
@@ -649,6 +658,7 @@ fun ConfettiCelebration() {
 }
 
 @Composable
+@OptIn(ExperimentalLayoutApi::class)
 fun GameScreen(navController: NavController, game: Game, mode: String, index: Int, launchInfo: world.respect.kokebfidel.data.models.RespectLaunchInfo?, onBack: () -> Unit, onMissionCompleted: (String, Int) -> Unit) {
     val activities = when(mode) {
         "easy" -> game.easyActivities
@@ -657,9 +667,9 @@ fun GameScreen(navController: NavController, game: Game, mode: String, index: In
     }
     
     fun getInitialTime() = when(mode) {
-        "easy" -> 180
-        "medium" -> 120
-        else -> 60
+        "easy" -> game.easyTimeLimit ?: game.timeLimit ?: 180
+        "medium" -> game.mediumTimeLimit ?: game.timeLimit ?: 120
+        else -> game.hardTimeLimit ?: game.timeLimit ?: 60
     }
 
     var currentIndex by remember { mutableStateOf(index) }
@@ -793,28 +803,44 @@ fun GameScreen(navController: NavController, game: Game, mode: String, index: In
                 Spacer(modifier = Modifier.height(24.dp))
                 
                 // Mission Image Card
-                Box(modifier = Modifier.padding(horizontal = 24.dp).clip(RoundedCornerShape(32.dp)).clickable { playAudio(activity.word) }.border(4.dp, Color.White, RoundedCornerShape(32.dp)).shadow(12.dp, RoundedCornerShape(32.dp))) {
-                    val activityImageModel = if (activity.imageUrl.startsWith("http")) activity.imageUrl else "file:///android_asset/${activity.imageUrl.replace("assets/", "")}"
-                    AsyncImage(
-                        model = ImageRequest.Builder(LocalContext.current)
-                            .data(activityImageModel)
-                            .crossfade(true)
-                            .diskCachePolicy(CachePolicy.ENABLED)
-                            .memoryCachePolicy(CachePolicy.ENABLED)
-                            .build(), 
-                        contentDescription = null, 
-                        modifier = Modifier.width(300.dp).height(240.dp).background(Color.White), 
-                        contentScale = ContentScale.Crop
-                    )
-                    Box(modifier = Modifier.align(Alignment.BottomEnd).padding(16.dp).size(56.dp).background(Color.White.copy(0.9f), CircleShape).border(3.dp, Color(0xFF60A5FA), CircleShape).clickable { playAudio(activity.word) }.padding(12.dp), contentAlignment = Alignment.Center) {
-                        Icon(Icons.Default.VolumeUp, null, tint = Color(0xFF3B82F6), modifier = Modifier.size(32.dp))
+                if (activity.imageUrl.isNotEmpty() || activity.word.isNotEmpty()) {
+                    Box(modifier = Modifier.padding(horizontal = 24.dp).clip(RoundedCornerShape(32.dp)).border(4.dp, Color.White, RoundedCornerShape(32.dp)).shadow(12.dp, RoundedCornerShape(32.dp))) {
+                        if (activity.imageUrl.isNotEmpty()) {
+                            val activityImageModel = if (activity.imageUrl.startsWith("http")) activity.imageUrl else "file:///android_asset/${activity.imageUrl.replace("assets/", "")}"
+                            AsyncImage(
+                                model = ImageRequest.Builder(LocalContext.current)
+                                    .data(activityImageModel)
+                                    .crossfade(true)
+                                    .diskCachePolicy(CachePolicy.ENABLED)
+                                    .memoryCachePolicy(CachePolicy.ENABLED)
+                                    .error(R.drawable.logo)
+                                    .placeholder(R.drawable.logo)
+                                    .build(), 
+                                contentDescription = null, 
+                                modifier = Modifier.width(300.dp).height(240.dp).background(Color.White).clickable { if(activity.word.isNotEmpty()) playAudio(activity.word) }, 
+                                contentScale = ContentScale.Fit
+                            )
+                        } else {
+                            // Show a placeholder or empty space if only audio exists
+                            Box(modifier = Modifier.width(300.dp).height(240.dp).background(Color.White).clickable { if(activity.word.isNotEmpty()) playAudio(activity.word) })
+                        }
+                        
+                        if (activity.word.isNotEmpty()) {
+                            Box(modifier = Modifier.align(Alignment.BottomEnd).padding(16.dp).size(56.dp).background(Color.White.copy(0.9f), CircleShape).border(3.dp, Color(0xFF60A5FA), CircleShape).clickable { playAudio(activity.word) }.padding(12.dp), contentAlignment = Alignment.Center) {
+                                Icon(Icons.Default.VolumeUp, null, tint = Color(0xFF3B82F6), modifier = Modifier.size(32.dp))
+                            }
+                        }
                     }
                 }
 
                 Spacer(modifier = Modifier.height(40.dp))
 
                 // Input Boxes
-                Row(horizontalArrangement = Arrangement.Center, modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp)) {
+                FlowRow(
+                    horizontalArrangement = Arrangement.Center,
+                    verticalArrangement = Arrangement.Center,
+                    modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp)
+                ) {
                     userInput.forEachIndexed { idx, letter ->
                         val isEmpty = letter.isEmpty()
                         Box(modifier = Modifier.padding(4.dp).size(60.dp).background(if (isEmpty) Color.White.copy(0.5f) else Color(0xFF3B82F6), RoundedCornerShape(12.dp)).border(2.dp, if(isEmpty) Color(0xFF3B82F6) else Color.Transparent, RoundedCornerShape(12.dp)).clickable {
@@ -833,7 +859,11 @@ fun GameScreen(navController: NavController, game: Game, mode: String, index: In
                 Spacer(modifier = Modifier.height(30.dp))
 
                 // Letter Bank
-                Row(horizontalArrangement = Arrangement.Center, modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp).heightIn(min = 70.dp)) {
+                FlowRow(
+                    horizontalArrangement = Arrangement.Center,
+                    verticalArrangement = Arrangement.Center,
+                    modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp).heightIn(min = 70.dp)
+                ) {
                     shuffledLetters.forEachIndexed { idx, letter ->
                         Box(modifier = Modifier.padding(4.dp).size(60.dp).background(Brush.linearGradient(listOf(Color(0xFFFF9052), Color(0xFFFFB660))), RoundedCornerShape(12.dp)).clickable {
                             val emptyIndex = userInput.indexOfFirst { it.isEmpty() }
