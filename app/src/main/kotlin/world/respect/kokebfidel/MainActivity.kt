@@ -393,14 +393,17 @@ fun GameCard(game: Game, onSelected: () -> Unit, isFeatured: Boolean) {
                     .build(),
                 contentDescription = game.title,
                 modifier = Modifier.fillMaxSize(),
-                contentScale = ContentScale.Fit
+                contentScale = ContentScale.Crop
             )
             
-            // Soft overlay for text readability
+            // Premium Gradient overlay for text readability (more immersive)
             Box(modifier = Modifier.fillMaxSize().background(
                 Brush.verticalGradient(
-                    listOf(Color.Transparent, Color.Black.copy(alpha = 0.5f)),
-                    startY = if(isFeatured) 300f else 200f
+                    listOf(
+                        Color.Black.copy(alpha = 0.2f),
+                        Color.Transparent,
+                        Color.Black.copy(alpha = 0.7f)
+                    )
                 )
             ))
 
@@ -804,6 +807,9 @@ fun GameScreen(navController: NavController, game: Game, mode: String, index: In
                 
                 // Mission Image Card
                 if (activity.imageUrl.isNotEmpty() || activity.word.isNotEmpty()) {
+                    var isError by remember(activity.id) { mutableStateOf(false) }
+                    val cardHeight = if (isError || activity.imageUrl.isEmpty()) 160.dp else 240.dp
+                    
                     Box(modifier = Modifier.padding(horizontal = 24.dp).clip(RoundedCornerShape(32.dp)).border(4.dp, Color.White, RoundedCornerShape(32.dp)).shadow(12.dp, RoundedCornerShape(32.dp))) {
                         if (activity.imageUrl.isNotEmpty()) {
                             val activityImageModel = if (activity.imageUrl.startsWith("http")) activity.imageUrl else "file:///android_asset/${activity.imageUrl.replace("assets/", "")}"
@@ -817,17 +823,26 @@ fun GameScreen(navController: NavController, game: Game, mode: String, index: In
                                     .placeholder(R.drawable.logo)
                                     .build(), 
                                 contentDescription = null, 
-                                modifier = Modifier.width(300.dp).height(240.dp).background(Color.White).clickable { if(activity.word.isNotEmpty()) playAudio(activity.word) }, 
+                                modifier = Modifier.width(300.dp).height(cardHeight).background(Color.White).clickable { if(activity.word.isNotEmpty()) playAudio(activity.word) }, 
+                                onState = { state -> 
+                                    isError = state is coil.compose.AsyncImagePainter.State.Error
+                                },
                                 contentScale = ContentScale.Fit
                             )
                         } else {
-                            // Show a placeholder or empty space if only audio exists
-                            Box(modifier = Modifier.width(300.dp).height(240.dp).background(Color.White).clickable { if(activity.word.isNotEmpty()) playAudio(activity.word) })
+                            // Show a placeholder (logo) if only audio exists
+                            Image(
+                                painter = painterResource(id = R.drawable.logo),
+                                contentDescription = null,
+                                modifier = Modifier.width(300.dp).height(cardHeight).background(Color.White).padding(24.dp).clickable { if(activity.word.isNotEmpty()) playAudio(activity.word) },
+                                contentScale = ContentScale.Fit
+                            )
                         }
                         
+                        // Audio Button Overlay
                         if (activity.word.isNotEmpty()) {
-                            Box(modifier = Modifier.align(Alignment.BottomEnd).padding(16.dp).size(56.dp).background(Color.White.copy(0.9f), CircleShape).border(3.dp, Color(0xFF60A5FA), CircleShape).clickable { playAudio(activity.word) }.padding(12.dp), contentAlignment = Alignment.Center) {
-                                Icon(Icons.Default.VolumeUp, null, tint = Color(0xFF3B82F6), modifier = Modifier.size(32.dp))
+                            Box(modifier = Modifier.align(Alignment.BottomEnd).padding(16.dp).size(if(isError || activity.imageUrl.isEmpty()) 48.dp else 56.dp).background(Color.White.copy(0.9f), CircleShape).border(3.dp, Color(0xFF60A5FA), CircleShape).clickable { playAudio(activity.word) }.padding(if(isError || activity.imageUrl.isEmpty()) 8.dp else 12.dp), contentAlignment = Alignment.Center) {
+                                Icon(Icons.Default.VolumeUp, null, tint = Color(0xFF3B82F6), modifier = Modifier.size(if(isError || activity.imageUrl.isEmpty()) 24.dp else 32.dp))
                             }
                         }
                     }

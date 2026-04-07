@@ -14,7 +14,7 @@ import io.ktor.server.routing.*
 import java.io.File
 
 fun main() {
-    embeddedServer(Netty, port = 8083, host = "0.0.0.0", module = Application::module)
+    embeddedServer(Netty, port = 9018, host = "0.0.0.0", module = Application::module)
         .start(wait = true)
 }
 
@@ -43,6 +43,22 @@ fun Application.module() {
     }
 
     routing {
+        // Root path info
+        get("/") {
+            val manifestUrl = "http://196.189.50.57:9018/RESPECT_MANIFEST.json"
+            val opdsUrl = "http://196.189.50.57:9018/opds.json"
+            call.respondText("""
+                RESPECT REST API - Alive
+                ------------------------
+                Manifest: $manifestUrl
+                OPDS Catalog: $opdsUrl
+                
+                Metadata server is running on port 9018.
+                To validate:
+                respect-cli validate --manifest $manifestUrl
+            """.trimIndent())
+        }
+        
         // Serve manifest at root
         get("/RESPECT_MANIFEST.json") {
             val file = File(assetDir, "RESPECT_MANIFEST.json")
@@ -73,8 +89,8 @@ fun Application.module() {
 
         // Help text for the developer
         get("/info") {
-            val manifestUrl = "http://localhost:8083/RESPECT_MANIFEST.json"
-            val opdsUrl = "http://localhost:8083/opds.json"
+            val manifestUrl = "http://localhost:9018/RESPECT_MANIFEST.json"
+            val opdsUrl = "http://localhost:9018/opds.json"
             call.respondText("""
                 RESPECT Metadata Server
                 ------------------------
@@ -82,7 +98,7 @@ fun Application.module() {
                 OPDS Catalog: $opdsUrl
                 
                 To use with RESPECT Validator:
-                1. Use ngrok: ngrok http 8083
+                1. Use ngrok: ngrok http 9018
                 2. Copy the https URL provided by ngrok.
                 3. Run: respect-cli validate --manifest <your-ngrok-url>/RESPECT_MANIFEST.json
             """.trimIndent())
