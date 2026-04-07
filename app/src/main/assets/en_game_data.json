@@ -1,0 +1,738 @@
+{
+    "success": true,
+    "message": "Respect game data retrieved successfully",
+    "data": {
+        "course_id": "af49a965-695b-419e-865b-6f47b2467815",
+        "course_name": "English",
+        "description": "",
+        "game_data": {
+            "difficultyLevels": {
+                "easy": [
+                    {
+                        "id": "easy_1",
+                        "order": 0,
+                        "activities": [
+                            {
+                                "id": "easy_1_1",
+                                "word": "CAT",
+                                "order": 0,
+                                "letters": [
+                                    "C",
+                                    "A",
+                                    "T"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=C.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=arm+%281%29.m4a"
+                            },
+                            {
+                                "id": "easy_1_1773211282253",
+                                "word": "ANT",
+                                "order": 1,
+                                "letters": [
+                                    "A",
+                                    "N",
+                                    "T"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=gameactivity\u0026objectName=Comment+se+d%C3%A9barrasser+des+fourmis+avec+des+m%C3%A9thodes+naturelles+_.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=ant.m4a"
+                            },
+                            {
+                                "id": "easy_1_1773211286699",
+                                "word": "ARM",
+                                "order": 2,
+                                "letters": [
+                                    "A",
+                                    "R",
+                                    "M"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=gameactivity\u0026objectName=_This+is+how+I+want+the+front+if+my+hands+to+look__.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=arm.m4a"
+                            },
+                            {
+                                "id": "easy_1_1773211324396",
+                                "word": "BAG",
+                                "order": 3,
+                                "letters": [
+                                    "B",
+                                    "A",
+                                    "G"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=gameactivity\u0026objectName=download.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=bag.m4a"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "easy_1766691443036",
+                        "order": 1,
+                        "activities": [
+                            {
+                                "id": "easy_1766691443036_1",
+                                "word": "DOG",
+                                "order": 0,
+                                "letters": [
+                                    "D",
+                                    "O",
+                                    "G"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=D.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=dog.m4a"
+                            },
+                            {
+                                "id": "easy_1766691443036_1773211422448",
+                                "word": "BAT",
+                                "order": 1,
+                                "letters": [
+                                    "B",
+                                    "A",
+                                    "T"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=gameactivity\u0026objectName=Sch%C3%B6nes+Fledermaus+Clipart+Vektor+Png+Element%2C+Schl%C3%A4ger%2C+Fledermaus+Clipart%2C+Fledermaus+Png+PNG+und+Vektor+zum+kostenlosen+Download.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=bat+%281%29.m4a"
+                            },
+                            {
+                                "id": "easy_1766691443036_1773211423116",
+                                "word": "BEE",
+                                "order": 2,
+                                "letters": [
+                                    "B",
+                                    "E",
+                                    "E"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=gameactivity\u0026objectName=download+%281%29.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=bee.m4a"
+                            },
+                            {
+                                "id": "easy_1766691443036_1773211423966",
+                                "word": "BOX",
+                                "order": 3,
+                                "letters": [
+                                    "B",
+                                    "O",
+                                    "X"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=gameactivity\u0026objectName=Double+BOX+Packaging+service+_+Gift+wrapping+service.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=box.m4a"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "easy_1766691458747",
+                        "order": 2,
+                        "activities": [
+                            {
+                                "id": "easy_1766691458747_1",
+                                "word": "SUN",
+                                "order": 0,
+                                "letters": [
+                                    "S",
+                                    "U",
+                                    "N"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=S.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=sun.m4a"
+                            },
+                            {
+                                "id": "easy_1766691458747_1773211588361",
+                                "word": "BUS",
+                                "order": 1,
+                                "letters": [
+                                    "B",
+                                    "U",
+                                    "S"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=gameactivity\u0026objectName=Illustration+of+Big+Tour+Bus+Isolated+on+White+Background_.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=bus.m4a"
+                            },
+                            {
+                                "id": "easy_1766691458747_1773211589189",
+                                "word": "CAP",
+                                "order": 2,
+                                "letters": [
+                                    "C",
+                                    "A",
+                                    "P"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=gameactivity\u0026objectName=Hand+Drawn+Banner+Clipart+Transparent+Background%2C+Baseball+Cap+Hand+Drawn+Hand+Account+Book+Cartoon%2C+Baseball+Cap+Clipart%2C+Hand+Painted%2C+Decoration+PNG+Image+For+Free+Download.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=cap.m4a"
+                            },
+                            {
+                                "id": "easy_1766691458747_1773211590338",
+                                "word": "DAY",
+                                "order": 3,
+                                "letters": [
+                                    "D",
+                                    "A",
+                                    "Y"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=gameactivity\u0026objectName=Baixar+bela+cena+do+p%C3%B4r+do+sol+no+campo+gratuitamente.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=day.m4a"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "easy_1766726387430",
+                        "order": 3,
+                        "activities": [
+                            {
+                                "id": "easy_1766726387430_1",
+                                "word": "HAT",
+                                "order": 0,
+                                "letters": [
+                                    "H",
+                                    "A",
+                                    "T"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=hat.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=hat.m4a"
+                            },
+                            {
+                                "id": "easy_1766726387430_1773211695783",
+                                "word": "EAR",
+                                "order": 1,
+                                "letters": [
+                                    "E",
+                                    "A",
+                                    "R"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=gameactivity\u0026objectName=What+happens+to+our+ears+over+time_.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=ear.m4a"
+                            },
+                            {
+                                "id": "easy_1766726387430_1773211696586",
+                                "word": "EYE",
+                                "order": 2,
+                                "letters": [
+                                    "E",
+                                    "Y",
+                                    "E"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=gameactivity\u0026objectName=download+%282%29.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=eye.m4a"
+                            },
+                            {
+                                "id": "easy_1766726387430_1773211697431",
+                                "word": "FAN",
+                                "order": 3,
+                                "letters": [
+                                    "F",
+                                    "A",
+                                    "N"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=gameactivity\u0026objectName=Electric+Fan+Illustration+Of+Transparent+Background+Free%2C+Fan%2C+Electric+Fan%2C+Electric+Fan+Ilustration+PNG+Transparent+Image+and+Clipart+for+Free+Download.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=fan.m4a"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "easy_1766726388560",
+                        "order": 4,
+                        "activities": [
+                            {
+                                "id": "easy_1766726388560_1",
+                                "word": "PEN",
+                                "order": 0,
+                                "letters": [
+                                    "P",
+                                    "E",
+                                    "N"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=pen.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=pen.m4a"
+                            },
+                            {
+                                "id": "easy_1766726388560_1773211763159",
+                                "word": "FOX",
+                                "order": 1,
+                                "letters": [
+                                    "F",
+                                    "O",
+                                    "X"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=gameactivity\u0026objectName=download+%283%29.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=fox.m4a"
+                            },
+                            {
+                                "id": "easy_1766726388560_1773211763943",
+                                "word": "GUM",
+                                "order": 2,
+                                "letters": [
+                                    "G",
+                                    "U",
+                                    "M"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=gameactivity\u0026objectName=chicle+chulito.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=gum.m4a"
+                            },
+                            {
+                                "id": "easy_1766726388560_1773211764715",
+                                "word": "HILL",
+                                "order": 3,
+                                "letters": [
+                                    "H",
+                                    "I",
+                                    "L",
+                                    "L"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=gameactivity\u0026objectName=Bits%2C+Pieces+%26+Slices+of+Life.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=hill.m4a"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "easy_1766726486039",
+                        "order": 5,
+                        "activities": [
+                            {
+                                "id": "easy_1766726486039_1",
+                                "word": "CAR",
+                                "order": 0,
+                                "letters": [
+                                    "C",
+                                    "A",
+                                    "R"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=car.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=car.m4a"
+                            },
+                            {
+                                "id": "easy_1766726486039_1773211856975",
+                                "word": "JAM",
+                                "order": 1,
+                                "letters": [
+                                    "J",
+                                    "A",
+                                    "M"
+                                ],
+                                "picture": "https://kokeb.et/api/storage/proxy?bucket=elearning-assets\u0026objectName=jam.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=jam.m4a"
+                            },
+                            {
+                                "id": "easy_1766726486039_1773211857701",
+                                "word": "KEY",
+                                "order": 2,
+                                "letters": [
+                                    "K",
+                                    "E",
+                                    "Y"
+                                ],
+                                "picture": "https://kokeb.et/api/storage/proxy?bucket=elearning-assets\u0026objectName=key.webp",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=key.m4a"
+                            },
+                            {
+                                "id": "easy_1766726486039_1773211858991",
+                                "word": "LEG",
+                                "order": 3,
+                                "letters": [
+                                    "L",
+                                    "E",
+                                    "G"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=gameactivity\u0026objectName=Woman+Legs+stock+photo_+Image+of+long%2C+lady%2C+hygiene+-+13384254.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=leg.m4a"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "easy_1766726486683",
+                        "order": 6,
+                        "activities": [
+                            {
+                                "id": "easy_1766726486683_1",
+                                "word": "BED",
+                                "order": 0,
+                                "letters": [
+                                    "B",
+                                    "E",
+                                    "D"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=bed.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=bed.m4a"
+                            },
+                            {
+                                "id": "easy_1766726486683_1773211910150",
+                                "word": "MAP",
+                                "order": 1,
+                                "letters": [
+                                    "M",
+                                    "A",
+                                    "P"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=gameactivity\u0026objectName=World+map.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=map.m4a"
+                            },
+                            {
+                                "id": "easy_1766726486683_1773211911221",
+                                "word": "NET",
+                                "order": 2,
+                                "letters": [
+                                    "N",
+                                    "E",
+                                    "T"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=gameactivity\u0026objectName=3%27+X+5%27+Reclaimed+Decorative+Fishing+Net.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=net.m4a"
+                            },
+                            {
+                                "id": "easy_1766726486683_1773211912414",
+                                "word": "NUT",
+                                "order": 3,
+                                "letters": [
+                                    "N",
+                                    "U",
+                                    "T"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=gameactivity\u0026objectName=Parents+can+reduce+a+child%27s+peanut+allergy+risk+with+these+steps_+Most+don%27t+know+them_.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=nut.m4a"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "easy_1766726487333",
+                        "order": 7,
+                        "activities": [
+                            {
+                                "id": "easy_1766726487333_1",
+                                "word": "BOY",
+                                "order": 0,
+                                "letters": [
+                                    "B",
+                                    "O",
+                                    "Y"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=boy.png",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=boy.m4a"
+                            },
+                            {
+                                "id": "easy_1766726487333_1773211969480",
+                                "word": "OWL",
+                                "order": 1,
+                                "letters": [
+                                    "O",
+                                    "W",
+                                    "L"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=gameactivity\u0026objectName=Cute+cartoon+image+of+an+owl+with+big+eye+_+Premium+Vector.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=owl.m4a"
+                            },
+                            {
+                                "id": "easy_1766726487333_1773211970780",
+                                "word": "PAN",
+                                "order": 2,
+                                "letters": [
+                                    "P",
+                                    "A",
+                                    "N"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=gameactivity\u0026objectName=Frying+Pan+Frying+Pan%2CNon+Stick+Frying+Pans+PFOA+Free%2CSkillets+with+Heat-resistant+Ergonomic+Handle%2CWithout+Cover%2C24CM+%28Color+_+A%29.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=pan.m4a"
+                            },
+                            {
+                                "id": "easy_1766726487333_1773211971827",
+                                "word": "PIG",
+                                "order": 3,
+                                "letters": [
+                                    "P",
+                                    "I",
+                                    "G"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=gameactivity\u0026objectName=download+%2812%29.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=pig.m4a"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "easy_1766726487930",
+                        "order": 8,
+                        "activities": [
+                            {
+                                "id": "easy_1766726487930_1",
+                                "word": "COW",
+                                "order": 0,
+                                "letters": [
+                                    "C",
+                                    "O",
+                                    "W"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=cow.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=cow.m4a"
+                            },
+                            {
+                                "id": "easy_1766726487930_1773212031700",
+                                "word": "POT",
+                                "order": 1,
+                                "letters": [
+                                    "P",
+                                    "O",
+                                    "T"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=gameactivity\u0026objectName=Empty+terracotta+clay+plant+pot+_+Free+Photo.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=pot.m4a"
+                            },
+                            {
+                                "id": "easy_1766726487930_1773212032622",
+                                "word": "RED",
+                                "order": 2,
+                                "letters": [
+                                    "R",
+                                    "E",
+                                    "D"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=gameactivity\u0026objectName=download+%2813%29.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=red.m4a"
+                            },
+                            {
+                                "id": "easy_1766726487930_1773212033466",
+                                "word": "RUN",
+                                "order": 3,
+                                "letters": [
+                                    "R",
+                                    "U",
+                                    "N"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=gameactivity\u0026objectName=Um+Desenho+Animado+De+Crian%C3%A7as+Correndo+PNG+%2C+Desenho+Animado%2C+Crian%C3%A7as%2C+Corrida+PNG+Imagem+para+download+gratuito.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=run.m4a"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "easy_1766726488680",
+                        "order": 9,
+                        "activities": [
+                            {
+                                "id": "easy_1766726488680_1",
+                                "word": "CUP",
+                                "order": 0,
+                                "letters": [
+                                    "C",
+                                    "U",
+                                    "P"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=cup.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=cup.m4a"
+                            },
+                            {
+                                "id": "easy_1766726488680_1773212130558",
+                                "word": "SKY",
+                                "order": 1,
+                                "letters": [
+                                    "S",
+                                    "K",
+                                    "Y"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=gameactivity\u0026objectName=Baixar+vetor+dia+paisagem+desenhos+animados+c%C3%A9u+nuvens%2C+corvo%2C+sol+e+design+de+plano+de+fundo+raios+solares_+gratuitamente.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=sky.m4a"
+                            },
+                            {
+                                "id": "easy_1766726488680_1773212131342",
+                                "word": "TOY",
+                                "order": 2,
+                                "letters": [
+                                    "T",
+                                    "O",
+                                    "Y"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=gameactivity\u0026objectName=download+%2814%29.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=toy.m4a"
+                            },
+                            {
+                                "id": "easy_1766726488680_1773212132357",
+                                "word": "VAN",
+                                "order": 3,
+                                "letters": [
+                                    "V",
+                                    "A",
+                                    "N"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=gameactivity\u0026objectName=Scarica+realistico+camion+illustrazione.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=van.m4a"
+                            }
+                        ]
+                    }
+                ],
+                "hard": [
+                    {
+                        "id": "hard_1",
+                        "order": 0,
+                        "activities": [
+                            {
+                                "id": "hard_1_1",
+                                "word": "RABBIT",
+                                "order": 0,
+                                "letters": [
+                                    "R",
+                                    "A",
+                                    "B",
+                                    "B",
+                                    "I",
+                                    "T"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=R.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=rabbit.m4a"
+                            },
+                            {
+                                "id": "hard_1_1773215211809",
+                                "word": "AIRPLANE",
+                                "order": 1,
+                                "letters": [
+                                    "A",
+                                    "I",
+                                    "R",
+                                    "P",
+                                    "L",
+                                    "A",
+                                    "N",
+                                    "E"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=gameactivity\u0026objectName=%D0%90%D0%B1%D0%B0%D0%B4%D0%B0%D0%B3%D1%8B+%D1%83%D1%87%D0%B0%D0%BA.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=airplane.m4a"
+                            },
+                            {
+                                "id": "hard_1_1773215212236",
+                                "word": "BICYCLE",
+                                "order": 2,
+                                "letters": [
+                                    "B",
+                                    "I",
+                                    "C",
+                                    "Y",
+                                    "C",
+                                    "L",
+                                    "E"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=gameactivity\u0026objectName=Bicycle+clipart+vector+icon+sticker+illustration+_+Premium+Vector.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=bicycle.m4a"
+                            },
+                            {
+                                "id": "hard_1_1773215212802",
+                                "word": "BUTTERFLY",
+                                "order": 3,
+                                "letters": [
+                                    "B",
+                                    "U",
+                                    "T",
+                                    "T",
+                                    "E",
+                                    "R",
+                                    "F",
+                                    "L",
+                                    "Y"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=gameactivity\u0026objectName=download+%2819%29.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=BUTTERFLY.m4a"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "hard_1766691558203",
+                        "order": 1,
+                        "activities": [
+                            {
+                                "id": "hard_1766691558203_1",
+                                "word": "DONKEY",
+                                "order": 0,
+                                "letters": [
+                                    "D",
+                                    "O",
+                                    "N",
+                                    "K",
+                                    "E",
+                                    "Y"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=elearning-assets\u0026objectName=dd.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=donkey.m4a"
+                            },
+                            {
+                                "id": "hard_1766691558203_1773215221404",
+                                "word": "CROCODILE",
+                                "order": 1,
+                                "letters": [
+                                    "C",
+                                    "R",
+                                    "O",
+                                    "C",
+                                    "O",
+                                    "D",
+                                    "I",
+                                    "L",
+                                    "E"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=gameactivity\u0026objectName=Cocodrilo+Verde+PNG+%2Cdibujos++Clipart+De+Cocodrilo%2C+Piel+De+Cocodrilo+Verde+PNG+%2Cdibujos++Cocodrilo+PNG+Imagen+para+Descarga+Gratuita+_+Pngtree.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=CROCODILE.m4a"
+                            },
+                            {
+                                "id": "hard_1766691558203_1773215222014",
+                                "word": "DOLPHIN",
+                                "order": 2,
+                                "letters": [
+                                    "D",
+                                    "O",
+                                    "L",
+                                    "P",
+                                    "H",
+                                    "I",
+                                    "N"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=gameactivity\u0026objectName=Kauai+Dolphin+Tours_+Best+Spots+%26+What+to+Know.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=dolphin.m4a"
+                            },
+                            {
+                                "id": "hard_1766691558203_1773215222655",
+                                "word": "ELEPHANT",
+                                "order": 3,
+                                "letters": [
+                                    "E",
+                                    "L",
+                                    "E",
+                                    "P",
+                                    "H",
+                                    "A",
+                                    "N",
+                                    "T"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=gameactivity\u0026objectName=elefante.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=ELEPHANT.m4a"
+                            }
+                        ]
+                    }
+                ],
+                "medium": [
+                    {
+                        "id": "medium_1",
+                        "order": 0,
+                        "activities": [
+                            {
+                                "id": "medium_1_1",
+                                "word": "BALL",
+                                "order": 0,
+                                "letters": [
+                                    "B",
+                                    "A",
+                                    "L",
+                                    "L"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=photo_2_2025-12-29_17-16-04.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=ball.m4a"
+                            },
+                            {
+                                "id": "medium_1_1773213303790",
+                                "word": "BANANA",
+                                "order": 1,
+                                "letters": [
+                                    "B",
+                                    "A",
+                                    "N",
+                                    "A",
+                                    "N",
+                                    "A"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=gameactivity\u0026objectName=Fruta+Banana+Estilo+Desenho+Animado+Vetor+PNG+%2C+Banana%2C+Banana+Fruta%2C+Fruta+Imagem+PNG+e+Vetor+Para+Download+Gratuito.jpg",
+                                "audio_url": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=BANANA.m4a"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

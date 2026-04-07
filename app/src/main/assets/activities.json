@@ -3,7 +3,11 @@
     "title": "All Activities"
   },
   "links": [
-    {"rel": "self", "href": "activities.json", "type": "application/opds+json"}
+    {
+      "rel": "self",
+      "href": "https://kokeb.et/native_app/activities.json",
+      "type": "application/opds+json"
+    }
   ],
   "publications": [
     {
@@ -14,11 +18,22 @@
         "language": "en"
       },
       "links": [
-        {"rel": "self", "href": "activity1.json", "type": "application/webpub+manifest+json"},
-        {"rel": "http://opds-spec.org/acquisition/open-access", "href": "activity1.html", "type": "text/html"}
+        {
+          "rel": "self",
+          "href": "https://kokeb.et/native_app/activity1.json",
+          "type": "application/webpub+manifest+json"
+        },
+        {
+          "rel": "http://opds-spec.org/acquisition/open-access",
+          "href": "https://kokeb.et/native_app/activity1.html",
+          "type": "text/html"
+        }
       ],
       "images": [
-        {"href": "images/offline/letter_arrangement/thumbnail.webp", "type": "image/webp"}
+        {
+          "href": "https://kokeb.et/native_app/images/offline/letter_arrangement/thumbnail.webp",
+          "type": "image/webp"
+        }
       ]
     },
     {
@@ -29,11 +44,22 @@
         "language": "am"
       },
       "links": [
-        {"rel": "self", "href": "activity2.json", "type": "application/webpub+manifest+json"},
-        {"rel": "http://opds-spec.org/acquisition/open-access", "href": "activity2.html", "type": "text/html"}
+        {
+          "rel": "self",
+          "href": "https://kokeb.et/native_app/activity2.json",
+          "type": "application/webpub+manifest+json"
+        },
+        {
+          "rel": "http://opds-spec.org/acquisition/open-access",
+          "href": "https://kokeb.et/native_app/activity2.html",
+          "type": "text/html"
+        }
       ],
       "images": [
-        {"href": "images/offline/am_game/thumbnail.webp", "type": "image/webp"}
+        {
+          "href": "https://kokeb.et/native_app/images/offline/am_game/thumbnail.webp",
+          "type": "image/webp"
+        }
       ]
     },
     {
@@ -44,11 +70,22 @@
         "language": "om"
       },
       "links": [
-        {"rel": "self", "href": "activity3.json", "type": "application/webpub+manifest+json"},
-        {"rel": "http://opds-spec.org/acquisition/open-access", "href": "activity3.html", "type": "text/html"}
+        {
+          "rel": "self",
+          "href": "https://kokeb.et/native_app/activity3.json",
+          "type": "application/webpub+manifest+json"
+        },
+        {
+          "rel": "http://opds-spec.org/acquisition/open-access",
+          "href": "https://kokeb.et/native_app/activity3.html",
+          "type": "text/html"
+        }
       ],
       "images": [
-        {"href": "images/offline/om_game/thumbnail.webp", "type": "image/webp"}
+        {
+          "href": "https://kokeb.et/native_app/images/offline/om_game/thumbnail.webp",
+          "type": "image/webp"
+        }
       ]
     }
   ]

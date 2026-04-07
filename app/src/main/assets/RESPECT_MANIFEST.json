@@ -13,7 +13,7 @@
    "website": "https://learningcloud.et/",
    "icon": "images/logo.png",
    "version": "1.1.6",
-   "learningUnits": "opds.json",
+   "learningUnits": "https://kokeb.et/native_app/opds.json",
    "defaultLaunchUri": "kokebfidel://launch",
 
    "android": {

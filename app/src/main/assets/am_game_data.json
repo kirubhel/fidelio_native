@@ -1,0 +1,537 @@
+{
+    "success": true,
+    "message": "Respect game data retrieved successfully",
+    "data": {
+        "course_id": "eedba893-5cc0-40ad-b359-44a0c008642f",
+        "course_name": "Amharic",
+        "description": "",
+        "game_data": {
+            "difficultyLevels": {
+                "easy": [
+                    {
+                        "id": "easy_1",
+                        "order": 0,
+                        "activities": [
+                            {
+                                "id": "easy_1_1",
+                                "word": "እናት",
+                                "order": 0,
+                                "letters": [
+                                    "እ",
+                                    "ና",
+                                    "ት"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=elearning-assets\u0026objectName=Mother.png"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "easy_1770110052692",
+                        "order": 1,
+                        "activities": [
+                            {
+                                "id": "easy_1770110052692_1",
+                                "word": "አባት",
+                                "order": 0,
+                                "letters": [
+                                    "አ",
+                                    "ባ",
+                                    "ት"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=elearning-assets\u0026objectName=Father.png"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "easy_1770110053051",
+                        "order": 2,
+                        "activities": [
+                            {
+                                "id": "easy_1770110053051_1",
+                                "word": "መምህር",
+                                "order": 0,
+                                "letters": [
+                                    "መ",
+                                    "ም",
+                                    "ህ",
+                                    "ር"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=teacher.png"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "easy_1770110053412",
+                        "order": 3,
+                        "activities": [
+                            {
+                                "id": "easy_1770110053412_1",
+                                "word": "ተማሪ",
+                                "order": 0,
+                                "letters": [
+                                    "ተ",
+                                    "ማ",
+                                    "ሪ"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=i+am+a+girl.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "easy_1770110053724",
+                        "order": 4,
+                        "activities": [
+                            {
+                                "id": "easy_1770110053724_1",
+                                "word": "ጓደኛ",
+                                "order": 0,
+                                "letters": [
+                                    "ጓ",
+                                    "ደ",
+                                    "ኛ"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=freind.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "easy_1770110053996",
+                        "order": 5,
+                        "activities": [
+                            {
+                                "id": "easy_1770110053996_1",
+                                "word": "ቤት",
+                                "order": 0,
+                                "letters": [
+                                    "ቤ",
+                                    "ት"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=house.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "easy_1770110054203",
+                        "order": 6,
+                        "activities": [
+                            {
+                                "id": "easy_1770110054203_1",
+                                "word": "መጽሐፍ",
+                                "order": 0,
+                                "letters": [
+                                    "መ",
+                                    "ጽ",
+                                    "ሐ",
+                                    "ፍ"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=photo_1_2025-12-18_15-13-24.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "easy_1770110054412",
+                        "order": 7,
+                        "activities": [
+                            {
+                                "id": "easy_1770110054412_1",
+                                "word": "እርሳስ",
+                                "order": 0,
+                                "letters": [
+                                    "እ",
+                                    "ር",
+                                    "ሳ",
+                                    "ስ"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=photo_7_2025-12-18_15-13-24.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "easy_1770110055156",
+                        "order": 8,
+                        "activities": [
+                            {
+                                "id": "easy_1770110055156_1",
+                                "word": "ወንበር",
+                                "order": 0,
+                                "letters": [
+                                    "ወ",
+                                    "ን",
+                                    "በ",
+                                    "ር"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=photo_2_2025-12-18_15-13-24.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "easy_1770110055382",
+                        "order": 9,
+                        "activities": [
+                            {
+                                "id": "easy_1770110055382_1",
+                                "word": "ውሃ",
+                                "order": 0,
+                                "letters": [
+                                    "ው",
+                                    "ሃ"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=W.jpg"
+                            }
+                        ]
+                    }
+                ],
+                "hard": [
+                    {
+                        "id": "hard_1",
+                        "order": 0,
+                        "activities": [
+                            {
+                                "id": "hard_1_1",
+                                "word": "ድመት",
+                                "order": 0,
+                                "letters": [
+                                    "ድ",
+                                    "መ",
+                                    "ት"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=C.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "hard_1770117577291",
+                        "order": 1,
+                        "activities": [
+                            {
+                                "id": "hard_1770117577291_1",
+                                "word": "ውሻ",
+                                "order": 0,
+                                "letters": [
+                                    "ው",
+                                    "ሻ"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=download+%282%29.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "hard_1770117577482",
+                        "order": 2,
+                        "activities": [
+                            {
+                                "id": "hard_1770117577482_1",
+                                "word": "ወፍ",
+                                "order": 0,
+                                "letters": [
+                                    "ወ",
+                                    "ፍ"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=Realistic+Green+Parrot+Vector+Image+Transparent+Background+PNG+Images+_+PNG+Free+Download+-+Pikbest.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "hard_1770117577682",
+                        "order": 3,
+                        "activities": [
+                            {
+                                "id": "hard_1770117577682_1",
+                                "word": "መኪና",
+                                "order": 0,
+                                "letters": [
+                                    "መ",
+                                    "ኪ",
+                                    "ና"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=car.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "hard_1770117577851",
+                        "order": 4,
+                        "activities": [
+                            {
+                                "id": "hard_1770117577851_1",
+                                "word": "እንቅልፍ",
+                                "order": 0,
+                                "letters": [
+                                    "እ",
+                                    "ን",
+                                    "ቅ",
+                                    "ል",
+                                    "ፍ"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=Sleeping+Baby+Cartoon+3d+Character+Isolated+On+White+Background%2C+Cartoon+3d+Character+Isolated+On+White+Background%2C+Sleeping+Baby+PNG+Transparent+Image+and+Clipart+for+Free+Download.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "hard_1770117578057",
+                        "order": 5,
+                        "activities": [
+                            {
+                                "id": "hard_1770117578057_1",
+                                "word": "ጨዋታ",
+                                "order": 0,
+                                "letters": [
+                                    "ጨ",
+                                    "ዋ",
+                                    "ታ"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=illustration+vectorielle+d%27enfants+heureux+jouant+dans+une+aire+de+jeux.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "hard_1770117578250",
+                        "order": 6,
+                        "activities": [
+                            {
+                                "id": "hard_1770117578250_1",
+                                "word": "አልጋ",
+                                "order": 0,
+                                "letters": [
+                                    "አ",
+                                    "ል",
+                                    "ጋ"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=bed.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "hard_1770117578482",
+                        "order": 7,
+                        "activities": [
+                            {
+                                "id": "hard_1770117578482_1",
+                                "word": "ደስታ",
+                                "order": 0,
+                                "letters": [
+                                    "ደ",
+                                    "ስ",
+                                    "ታ"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=Keep+Smiling+Emoji+_+Happiness+Sticker.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "hard_1770117578678",
+                        "order": 8,
+                        "activities": [
+                            {
+                                "id": "hard_1770117578678_1",
+                                "word": "ሰላም",
+                                "order": 0,
+                                "letters": [
+                                    "ሰ",
+                                    "ላ",
+                                    "ም"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=You+can+stick+it_+protest+posters+in+the+age+of+Trump+%E2%80%93+in+pictures.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "hard_1770117579192",
+                        "order": 9,
+                        "activities": [
+                            {
+                                "id": "hard_1770117579192_1",
+                                "word": "ሐኪም",
+                                "order": 0,
+                                "letters": [
+                                    "ሐ",
+                                    "ኪ",
+                                    "ም"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=Cartoon+Male+Doctor+with+Stethoscope+Png+-+Photo+%233495.jpg"
+                            }
+                        ]
+                    }
+                ],
+                "medium": [
+                    {
+                        "id": "medium_1",
+                        "order": 0,
+                        "activities": [
+                            {
+                                "id": "medium_1_1",
+                                "word": "አበባ",
+                                "order": 0,
+                                "letters": [
+                                    "አ",
+                                    "በ",
+                                    "ባ"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=Flor+de+Hibisco+vermelha.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "medium_1770111398944",
+                        "order": 1,
+                        "activities": [
+                            {
+                                "id": "medium_1770111398944_1",
+                                "word": "ሴት",
+                                "order": 0,
+                                "letters": [
+                                    "ሴ",
+                                    "ት"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=photo_7_2025-09-09_12-39-49.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "medium_1770111399200",
+                        "order": 2,
+                        "activities": [
+                            {
+                                "id": "medium_1770111399200_1",
+                                "word": "ክፍል",
+                                "order": 0,
+                                "letters": [
+                                    "ክ",
+                                    "ፍ",
+                                    "ል"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=Salle+classe+-+Vecteurs%C2%A0_+t%C3%A9l%C3%A9chargez+gratuitement+des+vecteurs+de+haute+qualit%C3%A9+sur+Freepik+_+Freepik.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "medium_1770111399584",
+                        "order": 3,
+                        "activities": [
+                            {
+                                "id": "medium_1770111399584_1",
+                                "word": "ደብተር",
+                                "order": 0,
+                                "letters": [
+                                    "ደ",
+                                    "ብ",
+                                    "ተ",
+                                    "ር"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=Classic+A4+Exercise+Books+-+200+Pages.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "medium_1770111399776",
+                        "order": 4,
+                        "activities": [
+                            {
+                                "id": "medium_1770111399776_1",
+                                "word": "ሰሌዳ",
+                                "order": 0,
+                                "letters": [
+                                    "ሰ",
+                                    "ሌ",
+                                    "ዳ"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=Chalkboard+blank+template+blackboard.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "medium_1770111399960",
+                        "order": 5,
+                        "activities": [
+                            {
+                                "id": "medium_1770111399960_1",
+                                "word": "ሻንጣ",
+                                "order": 0,
+                                "letters": [
+                                    "ሻ",
+                                    "ን",
+                                    "ጣ"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=Opened+empty+traveler+suitcase+isolated+on+white+_+Premium+AI-generated+image.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "medium_1770111400168",
+                        "order": 6,
+                        "activities": [
+                            {
+                                "id": "medium_1770111400168_1",
+                                "word": "ምግብ",
+                                "order": 0,
+                                "letters": [
+                                    "ም",
+                                    "ግ",
+                                    "ብ"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=amharic\u0026objectName=kocho.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "medium_1770111400648",
+                        "order": 7,
+                        "activities": [
+                            {
+                                "id": "medium_1770111400648_1",
+                                "word": "ፀሐይ",
+                                "order": 0,
+                                "letters": [
+                                    "ፀ",
+                                    "ሐ",
+                                    "ይ"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=S.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "medium_1770111400874",
+                        "order": 8,
+                        "activities": [
+                            {
+                                "id": "medium_1770111400874_1",
+                                "word": "ጨረቃ",
+                                "order": 0,
+                                "letters": [
+                                    "ጨ",
+                                    "ረ",
+                                    "ቃ"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=moon.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "medium_1770111401408",
+                        "order": 9,
+                        "activities": [
+                            {
+                                "id": "medium_1770111401408_1",
+                                "word": "ዛፍ",
+                                "order": 0,
+                                "letters": [
+                                    "ዛ",
+                                    "ፍ"
+                                ],
+                                "picture": "https://learningcloud.et/api/storage/proxy?bucket=english\u0026objectName=tree.jpg"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "game_type": 4,
+        "grade_level_id": "dd2e9f9e-e60f-44d6-8d5e-1785d6ad61da",
+        "grade_name": "Grade 1",
+        "id": "9b175b2e-de2a-4a15-955f-6a7c543809d9",
+        "is_active": true,
+        "thumbnail_url": "https://learningcloud.et/api/storage/proxy?bucket=gameactivity\u0026objectName=fidel+felga.png",
+        "title": "ፊደል ፍለጋ"
+    }
+}

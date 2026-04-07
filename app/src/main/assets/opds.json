@@ -3,14 +3,18 @@
     "title": "kokeb fidel Activities"
   },
   "links": [
-    {"rel": "self", "href": "opds.json", "type": "application/opds+json"}
+    {
+      "rel": "self",
+      "href": "https://kokeb.et/native_app/opds.json",
+      "type": "application/opds+json"
+    }
   ],
   "navigation": [
     {
-      "href": "activities.json", 
-      "title": "All Activities", 
+      "href": "https://kokeb.et/native_app/activities.json",
+      "title": "All Activities",
       "type": "application/opds+json",
-      "icon": "images/logo.png"
+      "icon": "https://kokeb.et/native_app/images/logo.png"
     }
   ]
 }
