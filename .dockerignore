@@ -1,0 +1,9 @@
+*.hprof
+.gradle
+build/
+app/build/
+server/build/
+.idea
+*.log
+.DS_Store
+node_modules
