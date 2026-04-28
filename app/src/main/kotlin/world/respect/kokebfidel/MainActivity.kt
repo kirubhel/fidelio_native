@@ -567,7 +567,7 @@ fun DifficultySection(name: String, activities: List<Activity>, globalStartIndex
                             color = color,
                             stars = progress[activity.id] ?: 0,
                             isLocked = isLocked,
-                            onClick = { if (!isLocked) onSelected(activity, name.lowercase(), absoluteIndex) }
+                            onClick = { if (!isLocked) onSelected(activity, name.lowercase(), globalIndex) }
                         )
 
                         // Horizontal path between nodes
@@ -688,7 +688,26 @@ fun GameScreen(navController: NavController, game: Game, mode: String, index: In
     
     var showInstruction by remember { mutableStateOf(true) }
     var showSuccess by remember { mutableStateOf(false) }
+    var isIncorrect by remember { mutableStateOf(false) }
+    val shakeOffset = remember { Animatable(0f) }
     var countdown by remember { mutableStateOf(0) }
+    
+    // Trigger shake animation and reset
+    LaunchedEffect(isIncorrect) {
+        if (isIncorrect) {
+            repeat(4) {
+                shakeOffset.animateTo(20f, tween(50))
+                shakeOffset.animateTo(-20f, tween(50))
+            }
+            shakeOffset.animateTo(0f, tween(50))
+            
+            // Auto-reset input: move letters back to bank
+            delay(200) 
+            userInput = List(activity.letters.size) { "" }
+            shuffledLetters = activity.letters.shuffled()
+            isIncorrect = false
+        }
+    }
     
     val fredoka = FontFamily(Font(R.font.fredoka_bold))
     val luckiestGuy = FontFamily(Font(R.font.luckiest_guy))
@@ -730,8 +749,13 @@ fun GameScreen(navController: NavController, game: Game, mode: String, index: In
         Image(painter = painterResource(id = R.drawable.background), contentDescription = null, modifier = Modifier.fillMaxSize().alpha(0.7f), contentScale = ContentScale.Crop)
 
         if (showSuccess) ConfettiCelebration()
+        
+        // Red Screen Feedback
+        if (isIncorrect) {
+            Box(modifier = Modifier.fillMaxSize().background(Color.Red.copy(0.2f)))
+        }
 
-        Column(modifier = Modifier.fillMaxSize().padding(top = 40.dp)) {
+        Column(modifier = Modifier.fillMaxSize().padding(top = 40.dp).offset(x = shakeOffset.value.dp)) {
             Row(modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
                 IconButton(onClick = onBack, modifier = Modifier.background(Color(0xFF2563EB), RoundedCornerShape(12.dp)).size(48.dp)) {
                     Icon(Icons.Default.Home, contentDescription = "Home", tint = Color.White)
@@ -889,7 +913,11 @@ fun GameScreen(navController: NavController, game: Game, mode: String, index: In
                                 newShuffled.removeAt(idx)
                                 userInput = newUserInput
                                 shuffledLetters = newShuffled
-                                if(newUserInput.joinToString("") == activity.letters.joinToString("")) showSuccess = true
+                                if(newUserInput.joinToString("") == activity.letters.joinToString("")) {
+                                    showSuccess = true
+                                } else if (newUserInput.all { it.isNotEmpty() }) {
+                                    isIncorrect = true
+                                }
                             }
                         }, contentAlignment = Alignment.Center) {
                             Text(letter, fontFamily = fredoka, color = Color.White, fontSize = 28.sp)
