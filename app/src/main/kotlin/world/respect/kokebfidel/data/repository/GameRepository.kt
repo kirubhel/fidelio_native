@@ -86,7 +86,7 @@ class GameRepository(private val context: Context) {
                         db.gameDao().insertGame(GameEntity(
                             id = summary.id,
                             title = summary.title,
-                            subject = summary.course_name,
+                            subject = summary.course_name ?: "",
                             thumbnailUrl = summary.thumbnail_url ?: "assets/images/proud-mascot.png",
                             color = existing?.color ?: 0xFF60A5FA.toInt(),
                             description = summary.description,
@@ -145,7 +145,7 @@ class GameRepository(private val context: Context) {
                     val entity = GameEntity(
                         id = detail.id,
                         title = detail.title,
-                        subject = detail.course_name,
+                        subject = detail.course_name ?: "",
                         thumbnailUrl = detail.thumbnail_url ?: "assets/images/proud-mascot.png",
                         color = existing?.color ?: 0xFF60A5FA.toInt(),
                         description = detail.description,

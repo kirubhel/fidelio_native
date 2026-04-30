@@ -38,6 +38,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -226,12 +229,11 @@ fun HomeMapScreen(respectInfo: RespectLaunchInfo?, games: List<Game>, isLoading:
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(horizontal = 24.dp, vertical = 8.dp),
-                horizontalArrangement = Arrangement.spacedBy(16.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 // Search Input (Replacing Filter Games)
                 Surface(
-                    modifier = Modifier.weight(1f).height(56.dp),
+                    modifier = Modifier.fillMaxWidth().height(56.dp),
                     shape = RoundedCornerShape(20.dp),
                     color = Color.White,
                     shadowElevation = 2.dp
@@ -245,6 +247,10 @@ fun HomeMapScreen(respectInfo: RespectLaunchInfo?, games: List<Game>, isLoading:
                                 onValueChange = { searchQuery = it },
                                 textStyle = androidx.compose.ui.text.TextStyle(fontFamily = fredoka, color = Color(0xFF334155), fontSize = 16.sp),
                                 modifier = Modifier.fillMaxWidth(),
+                                keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search),
+                                keyboardActions = KeyboardActions(onSearch = { 
+                                    // Handle search action if needed, or just let it close the keyboard
+                                }),
                                 decorationBox = { innerTextField ->
                                     if (searchQuery.isEmpty()) {
                                         Text("Filter Games...", color = Color(0xFF94A3B8), fontFamily = fredoka, fontSize = 16.sp)
@@ -253,18 +259,6 @@ fun HomeMapScreen(respectInfo: RespectLaunchInfo?, games: List<Game>, isLoading:
                                 }
                             )
                         }
-                    }
-                }
-                
-                // Action Icon
-                Surface(
-                    modifier = Modifier.size(56.dp),
-                    shape = RoundedCornerShape(20.dp),
-                    color = Color(0xFF3B82F6),
-                    shadowElevation = 4.dp
-                ) {
-                    Box(contentAlignment = Alignment.Center) {
-                        Icon(Icons.Default.Tune, null, tint = Color.White)
                     }
                 }
             }
