@@ -1,0 +1,16 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "world.respect.kokebfidel",
+      "sha256_cert_fingerprints": [
+        "D6:D2:09:59:26:63:58:07:A5:08:A8:58:D2:3C:A9:66:8F:8B:C6:36:F9:64:A0:68:9B:9A:45:3A:36:B2:98:C5",
+        "00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00"
+      ]
+    }
+  }
+]

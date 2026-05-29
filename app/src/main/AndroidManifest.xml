@@ -25,13 +25,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
-            <!-- RESPECT Deep Linking For Learning Units -->
-            <intent-filter android:autoVerify="true">
+            <!-- RESPECT Deep Linking For Learning Units - Custom Scheme -->
+            <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 
                 <data android:scheme="kokebfidel" android:host="launch" />
+            </intent-filter>
+
+            <!-- RESPECT Deep Linking For Learning Units - App Link (HTTPS) -->
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                
                 <data android:scheme="https" android:host="learningcloud.et" android:pathPrefix="/kokebfidel" />
             </intent-filter>
         </activity>

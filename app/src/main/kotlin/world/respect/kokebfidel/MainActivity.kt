@@ -685,6 +685,7 @@ fun GameScreen(navController: NavController, game: Game, mode: String, index: In
     var isIncorrect by remember { mutableStateOf(false) }
     val shakeOffset = remember { Animatable(0f) }
     var countdown by remember { mutableStateOf(0) }
+    var showGameOver by remember(currentIndex) { mutableStateOf(false) }
     
     // Trigger shake animation and reset
     LaunchedEffect(isIncorrect) {
@@ -722,10 +723,15 @@ fun GameScreen(navController: NavController, game: Game, mode: String, index: In
         tts?.speak(text, TextToSpeech.QUEUE_FLUSH, null, null)
     }
 
-    LaunchedEffect(timeSeconds, showInstruction, countdown, showSuccess) {
-        if (!showInstruction && countdown == 0 && !showSuccess && timeSeconds > 0) {
-            delay(1000)
-            timeSeconds -= 1
+    LaunchedEffect(timeSeconds, showInstruction, countdown, showSuccess, showGameOver) {
+        if (!showInstruction && countdown == 0 && !showSuccess && !showGameOver) {
+            if (timeSeconds > 0) {
+                delay(1000)
+                timeSeconds -= 1
+            } else {
+                // Time ran out — trigger Game Over
+                showGameOver = true
+            }
         }
     }
     
@@ -946,26 +952,106 @@ fun GameScreen(navController: NavController, game: Game, mode: String, index: In
                 Text("$countdown", fontFamily = luckiestGuy, fontSize = 160.sp, color = Color.White)
             }
         } else if (showSuccess) {
-            Box(modifier = Modifier.fillMaxSize().background(Color.Black.copy(0.5f)).clickable{}, contentAlignment = Alignment.Center) {
-                Column(modifier = Modifier.background(Color.White, RoundedCornerShape(24.dp)).padding(32.dp).width(300.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+            Box(
+                modifier = Modifier.fillMaxSize().background(Color.Black.copy(0.5f)).clickable {},
+                contentAlignment = Alignment.Center
+            ) {
+                Column(
+                    modifier = Modifier
+                        .background(Color.White, RoundedCornerShape(24.dp))
+                        .padding(32.dp)
+                        .width(300.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
                     Row {
                         repeat(3) { i ->
-                            Icon(Icons.Default.Star, null, tint = if(i < stars) Color(0xFFFFC107) else Color.LightGray, modifier = Modifier.size(if(i==1) 80.dp else 60.dp).offset(y = if(i==1) (-10).dp else 0.dp))
+                            Icon(
+                                Icons.Default.Star,
+                                null,
+                                tint = if (i < stars) Color(0xFFFFC107) else Color.LightGray,
+                                modifier = Modifier
+                                    .size(if (i == 1) 80.dp else 60.dp)
+                                    .offset(y = if (i == 1) (-10).dp else 0.dp)
+                            )
                         }
                     }
                     Text("Excellent!", fontFamily = fredoka, fontSize = 24.sp, color = Color(0xFF3B82F6))
                     Spacer(modifier = Modifier.height(32.dp))
-                    Button(onClick = { 
-                        onMissionCompleted(activity.id, stars)
-                        if (currentIndex < activities.size - 1) {
-                            currentIndex++
-                            timeSeconds = getInitialTime()
-                            userInput = List(activities[currentIndex].letters.size) { "" }
-                            shuffledLetters = activities[currentIndex].letters.shuffled()
-                        } else { onBack() }
-                        showSuccess = false 
-                    }, modifier = Modifier.height(50.dp).fillMaxWidth(), colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF60A5FA))) {
+                    Button(
+                        onClick = {
+                            onMissionCompleted(activity.id, stars)
+                            if (currentIndex < activities.size - 1) {
+                                currentIndex++
+                                timeSeconds = getInitialTime()
+                                userInput = List(activities[currentIndex].letters.size) { "" }
+                                shuffledLetters = activities[currentIndex].letters.shuffled()
+                            } else {
+                                onBack()
+                            }
+                            showSuccess = false
+                        },
+                        modifier = Modifier.height(50.dp).fillMaxWidth(),
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF60A5FA))
+                    ) {
                         Text("Next Level", fontFamily = fredoka, fontSize = 18.sp)
+                    }
+                }
+            }
+        } else if (showGameOver) {
+            // --- GAME OVER OVERLAY ---
+            Box(
+                modifier = Modifier.fillMaxSize().background(Color.Black.copy(0.75f)).clickable {},
+                contentAlignment = Alignment.Center
+            ) {
+                Column(
+                    modifier = Modifier
+                        .background(Color(0xFF1E293B), RoundedCornerShape(28.dp))
+                        .padding(32.dp)
+                        .width(300.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    // Animated sad emoji icon
+                    Box(
+                        modifier = Modifier
+                            .size(100.dp)
+                            .background(Color(0xFFF87171).copy(0.15f), CircleShape)
+                            .border(4.dp, Color(0xFFF87171).copy(0.4f), CircleShape),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text("⏰", fontSize = 52.sp)
+                    }
+                    Spacer(modifier = Modifier.height(20.dp))
+                    Text(
+                        text = "Game Over!",
+                        fontFamily = luckiestGuy,
+                        fontSize = 38.sp,
+                        color = Color(0xFFF87171)
+                    )
+                    Spacer(modifier = Modifier.height(8.dp))
+                    Text(
+                        text = "Time's up! Don't give up — try once more!",
+                        fontFamily = fredoka,
+                        fontSize = 15.sp,
+                        color = Color.White.copy(0.65f),
+                        textAlign = androidx.compose.ui.text.style.TextAlign.Center
+                    )
+                    Spacer(modifier = Modifier.height(32.dp))
+                    Button(
+                        onClick = {
+                            // Penalise one star for timeout, minimum 1
+                            stars = maxOf(1, stars - 1)
+                            timeSeconds = getInitialTime()
+                            userInput = List(activity.letters.size) { "" }
+                            shuffledLetters = activity.letters.shuffled()
+                            showGameOver = false
+                        },
+                        modifier = Modifier.height(55.dp).fillMaxWidth(),
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF3B82F6)),
+                        shape = RoundedCornerShape(16.dp)
+                    ) {
+                        Icon(Icons.Default.Refresh, null, tint = Color.White, modifier = Modifier.size(20.dp))
+                        Spacer(modifier = Modifier.width(8.dp))
+                        Text("Try Again", fontFamily = fredoka, fontSize = 20.sp)
                     }
                 }
             }
