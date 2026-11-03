@@ -27,6 +27,7 @@ Thumbs.db
 !debug-secret.keystore
 *.jks
 *.p12
+keystore.properties
 
 # Credentials & environment
 .env*

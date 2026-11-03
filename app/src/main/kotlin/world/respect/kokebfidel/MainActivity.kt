@@ -8,10 +8,9 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
-import android.view.WindowManager
-import androidx.core.view.WindowCompat
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
 import androidx.compose.animation.*
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.*
@@ -69,10 +68,11 @@ class MainActivity : ComponentActivity() {
     private lateinit var gameViewModel: GameViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        // Modern edge-to-edge API (replaces the deprecated
+        // WindowCompat.setDecorFitsSystemWindows / Window.statusBarColor calls).
+        enableEdgeToEdge()
         super.onCreate(savedInstanceState)
-        WindowCompat.setDecorFitsSystemWindows(window, false)
-        window.statusBarColor = android.graphics.Color.TRANSPARENT
-        
+
         val repository = world.respect.kokebfidel.data.repository.GameRepository(applicationContext)
         val factory = world.respect.kokebfidel.ui.GameViewModelFactory(repository)
         gameViewModel = ViewModelProvider(this, factory)[world.respect.kokebfidel.ui.GameViewModel::class.java]
@@ -197,26 +197,15 @@ fun HomeMapScreen(respectInfo: RespectLaunchInfo?, games: List<Game>, isLoading:
         )
 
         Column(modifier = Modifier.fillMaxSize()) {
-            // Header: All Games
-            Row(
+            // Header: colorful, playful title
+            Text(
+                text = rainbowTitle("All Games"),
+                fontFamily = luckiestGuy,
+                fontSize = 42.sp,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(top = 40.dp, bottom = 12.dp, start = 24.dp, end = 24.dp),
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Surface(
-                    shape = RoundedCornerShape(12.dp),
-                    color = Color.White.copy(0.4f),
-                    modifier = Modifier.size(48.dp)
-                ) {
-                    Box(contentAlignment = Alignment.Center) {
-                        Icon(Icons.Default.SportsEsports, null, tint = Color.White, modifier = Modifier.size(28.dp))
-                    }
-                }
-                Spacer(modifier = Modifier.width(16.dp))
-                Text("All Games", fontFamily = luckiestGuy, fontSize = 32.sp, color = Color.White)
-                Text(" 🎮", fontSize = 28.sp)
-            }
+                    .padding(top = 48.dp, bottom = 12.dp, start = 24.dp, end = 24.dp)
+            )
 
             // Search & Filter Bar
             var searchQuery by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf("") }
@@ -231,17 +220,16 @@ fun HomeMapScreen(respectInfo: RespectLaunchInfo?, games: List<Game>, isLoading:
                     .padding(horizontal = 24.dp, vertical = 8.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                // Search Input (Replacing Filter Games)
+                // Search Input
                 Surface(
-                    modifier = Modifier.fillMaxWidth().height(56.dp),
-                    shape = RoundedCornerShape(20.dp),
+                    modifier = Modifier.fillMaxWidth().height(60.dp),
+                    shape = RoundedCornerShape(30.dp),
                     color = Color.White,
-                    shadowElevation = 2.dp
+                    border = androidx.compose.foundation.BorderStroke(3.dp, Color(0xFF7C5CFF)),
+                    shadowElevation = 4.dp
                 ) {
                     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.CenterStart) {
-                        Row(modifier = Modifier.padding(start = 16.dp), verticalAlignment = Alignment.CenterVertically) {
-                            Icon(Icons.Default.Search, null, tint = Color(0xFF3B82F6), modifier = Modifier.size(20.dp))
-                            Spacer(modifier = Modifier.width(12.dp))
+                        Row(modifier = Modifier.padding(horizontal = 20.dp), verticalAlignment = Alignment.CenterVertically) {
                             androidx.compose.foundation.text.BasicTextField(
                                 value = searchQuery,
                                 onValueChange = { searchQuery = it },
@@ -253,7 +241,7 @@ fun HomeMapScreen(respectInfo: RespectLaunchInfo?, games: List<Game>, isLoading:
                                 }),
                                 decorationBox = { innerTextField ->
                                     if (searchQuery.isEmpty()) {
-                                        Text("Filter Games...", color = Color(0xFF94A3B8), fontFamily = fredoka, fontSize = 16.sp)
+                                        Text("Search games...", color = Color(0xFF9AA5B8), fontFamily = fredoka, fontSize = 18.sp)
                                     }
                                     innerTextField()
                                 }
@@ -274,7 +262,7 @@ fun HomeMapScreen(respectInfo: RespectLaunchInfo?, games: List<Game>, isLoading:
                     if (filteredGames.isNotEmpty()) {
                         androidx.compose.foundation.lazy.grid.LazyVerticalGrid(
                             columns = androidx.compose.foundation.lazy.grid.GridCells.Fixed(2),
-                            contentPadding = PaddingValues(top = 16.dp, start = 24.dp, end = 24.dp, bottom = 100.dp),
+                            contentPadding = PaddingValues(top = 8.dp, start = 24.dp, end = 24.dp, bottom = 32.dp),
                             horizontalArrangement = Arrangement.spacedBy(16.dp),
                             verticalArrangement = Arrangement.spacedBy(16.dp),
                             modifier = Modifier.fillMaxSize()
@@ -297,62 +285,27 @@ fun HomeMapScreen(respectInfo: RespectLaunchInfo?, games: List<Game>, isLoading:
                     } else if (!isLoading) {
                         Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                             Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                                Text("🔍", fontSize = 48.sp)
-                                Spacer(modifier = Modifier.height(12.dp))
-                                Text("No missions found.", color = Color.White.copy(0.7f), fontFamily = luckiestGuy)
+                                Text("No games yet!", color = Color(0xFF334155), fontFamily = luckiestGuy, fontSize = 26.sp)
                             }
                         }
                     }
                 }
             }
 
-            // Bottom Navigation (Screenshot Match)
-            Surface(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 24.dp, vertical = 24.dp)
-                    .height(84.dp),
-                shape = RoundedCornerShape(32.dp),
-                color = Color.White,
-                shadowElevation = 12.dp
-            ) {
-                Row(
-                    modifier = Modifier.fillMaxSize(),
-                    horizontalArrangement = Arrangement.Center,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    BottomNavItem("Play", Icons.Default.SportsEsports, true)
-                }
-            }
         }
     }
 }
 
-@Composable
-fun BottomNavItem(label: String, icon: androidx.compose.ui.graphics.vector.ImageVector, isActive: Boolean) {
-    val fredoka = FontFamily(Font(R.font.fredoka_bold))
-    Column(horizontalAlignment = Alignment.CenterHorizontally) {
-        Box(
-            modifier = Modifier
-                .size(if (isActive) 52.dp else 32.dp)
-                .background(if (isActive) Color(0xFFCDE9FE) else Color.Transparent, CircleShape),
-            contentAlignment = Alignment.Center
-        ) {
-            Icon(
-                icon, 
-                contentDescription = label, 
-                tint = if (isActive) Color(0xFF3B82F6) else Color(0xFF94A3B8),
-                modifier = Modifier.size(if(isActive) 28.dp else 24.dp)
-            )
-            if (isActive && label == "Trace") {
-                // Lock badge
-                Box(modifier = Modifier.align(Alignment.TopEnd).padding(2.dp)) {
-                    Icon(Icons.Default.Lock, null, tint = Color(0xFFFFD600), modifier = Modifier.size(12.dp))
-                }
-            }
-        }
-        Spacer(modifier = Modifier.height(2.dp))
-        Text(label, fontFamily = fredoka, fontSize = 10.sp, color = if(isActive) Color(0xFF3B82F6) else Color(0xFF94A3B8))
+private val kidAccents = listOf(
+    Color(0xFFFF6B9A), Color(0xFFFFA11F), Color(0xFF2DBE6C), Color(0xFF7C5CFF), Color(0xFF00A8E8)
+)
+
+// Title with each letter in a different kid-friendly color
+fun rainbowTitle(text: String) = androidx.compose.ui.text.buildAnnotatedString {
+    text.forEachIndexed { i, c ->
+        pushStyle(androidx.compose.ui.text.SpanStyle(color = kidAccents[i % kidAccents.size]))
+        append(c)
+        pop()
     }
 }
 
@@ -360,14 +313,16 @@ fun BottomNavItem(label: String, icon: androidx.compose.ui.graphics.vector.Image
 fun GameCard(game: Game, onSelected: () -> Unit, isFeatured: Boolean) {
     val luckiestGuy = FontFamily(Font(R.font.luckiest_guy))
     val fredoka = FontFamily(Font(R.font.fredoka_bold))
+    val accent = kidAccents[(game.id.hashCode() and 0x7fffffff) % kidAccents.size]
     
     Card(
         onClick = onSelected,
         modifier = Modifier
             .fillMaxWidth()
-            .height(if (isFeatured) 220.dp else 180.dp)
-            .shadow(12.dp, RoundedCornerShape(28.dp)),
-        shape = RoundedCornerShape(28.dp),
+            .height(if (isFeatured) 230.dp else 180.dp)
+            .shadow(14.dp, RoundedCornerShape(32.dp), spotColor = accent),
+        shape = RoundedCornerShape(32.dp),
+        border = androidx.compose.foundation.BorderStroke(4.dp, Color.White),
         colors = CardDefaults.cardColors(containerColor = Color.White)
     ) {
         Box(modifier = Modifier.fillMaxSize()) {
@@ -405,30 +360,38 @@ fun GameCard(game: Game, onSelected: () -> Unit, isFeatured: Boolean) {
             val totalStars = (game.easyActivities + game.mediumActivities + game.hardActivities).sumOf { it.stars }
             Surface(
                 modifier = Modifier.align(Alignment.TopStart).padding(12.dp),
-                shape = RoundedCornerShape(10.dp),
-                color = Color.White.copy(0.9f)
+                shape = RoundedCornerShape(16.dp),
+                color = Color(0xFFFFD23F)
             ) {
-                Row(modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp), verticalAlignment = Alignment.CenterVertically) {
-                    Icon(Icons.Default.Star, null, tint = Color(0xFFF59E0B), modifier = Modifier.size(14.dp))
-                    Spacer(modifier = Modifier.width(4.dp))
-                    Text("$totalStars", fontFamily = fredoka, fontSize = 12.sp, color = Color(0xFF5D4037))
-                }
+                Text(
+                    "★ $totalStars",
+                    modifier = Modifier.padding(horizontal = 10.dp, vertical = 4.dp),
+                    fontFamily = fredoka,
+                    fontSize = 13.sp,
+                    color = Color(0xFF5D4037)
+                )
             }
             
             if (isFeatured) {
                 // Secondary info for Hero card
-                Column(modifier = Modifier.align(Alignment.BottomStart).padding(16.dp)) {
-                    Text(game.title, color = Color.White, fontFamily = luckiestGuy, fontSize = 24.sp)
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                        Icon(Icons.Default.EmojiEvents, null, tint = Color(0xFFFFCA28), modifier = Modifier.size(14.dp))
-                        Spacer(modifier = Modifier.width(4.dp))
-                        Text("Best: 0", color = Color.White.copy(0.9f), fontSize = 14.sp, fontFamily = fredoka)
-                    }
+                Column(
+                    modifier = Modifier
+                        .align(Alignment.BottomStart)
+                        .padding(14.dp)
+                        .background(accent, RoundedCornerShape(20.dp))
+                        .padding(horizontal = 18.dp, vertical = 8.dp)
+                ) {
+                    Text(game.title, color = Color.White, fontFamily = luckiestGuy, fontSize = 26.sp)
+                    Text("Best: 0", color = Color.White, fontSize = 14.sp, fontFamily = fredoka)
                 }
             } else {
                 Text(
                     game.title, 
-                    modifier = Modifier.align(Alignment.BottomStart).padding(12.dp),
+                    modifier = Modifier
+                        .align(Alignment.BottomStart)
+                        .padding(10.dp)
+                        .background(accent, RoundedCornerShape(16.dp))
+                        .padding(horizontal = 12.dp, vertical = 6.dp),
                     color = Color.White, 
                     fontFamily = luckiestGuy, 
                     fontSize = 16.sp,
@@ -463,14 +426,32 @@ fun LevelSelectionScreen(game: Game, isLoading: Boolean, progress: Map<String, I
         Column(modifier = Modifier.fillMaxSize()) {
             // Header
             Row(
-                modifier = Modifier.fillMaxWidth().padding(top = 40.dp, start = 16.dp, end = 16.dp, bottom = 16.dp),
+                modifier = Modifier.fillMaxWidth().padding(top = 44.dp, start = 16.dp, end = 16.dp, bottom = 8.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                IconButton(onClick = onBack) {
-                    Icon(Icons.Default.ArrowBack, null, tint = Color(0xFF3B82F6), modifier = Modifier.size(32.dp))
+                Surface(
+                    onClick = onBack,
+                    shape = RoundedCornerShape(24.dp),
+                    color = Color.White,
+                    border = androidx.compose.foundation.BorderStroke(3.dp, Color(0xFF7C5CFF)),
+                    shadowElevation = 4.dp
+                ) {
+                    Text(
+                        "Back",
+                        modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
+                        fontFamily = FontFamily(Font(R.font.fredoka_bold)),
+                        fontSize = 16.sp,
+                        color = Color(0xFF7C5CFF)
+                    )
                 }
-                Spacer(modifier = Modifier.width(8.dp))
-                Text(game.title, fontFamily = luckiestGuy, fontSize = 28.sp, color = Color(0xFF3B82F6))
+                Spacer(modifier = Modifier.width(12.dp))
+                Text(
+                    text = rainbowTitle(game.title),
+                    fontFamily = luckiestGuy,
+                    fontSize = 30.sp,
+                    maxLines = 1,
+                    overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis
+                )
             }
 
             Box(modifier = Modifier.weight(1f)) {
@@ -493,15 +474,9 @@ fun LevelSelectionScreen(game: Game, isLoading: Boolean, progress: Map<String, I
 
                         DifficultySection("Easy", game.easyActivities, 0, unlockedIndices, progress, Color(0xFF4CAF50), onActivitySelected)
                         
-                        if (game.easyActivities.isNotEmpty() && game.mediumActivities.isNotEmpty()) {
-                            LevelLadder()
-                        }
                         
                         DifficultySection("Medium", game.mediumActivities, game.easyActivities.size, unlockedIndices, progress, Color(0xFFFF9800), onActivitySelected)
                         
-                        if (game.mediumActivities.isNotEmpty() && game.hardActivities.isNotEmpty()) {
-                            LevelLadder()
-                        }
                         
                         DifficultySection("Hard", game.hardActivities, game.easyActivities.size + game.mediumActivities.size, unlockedIndices, progress, Color(0xFFF44336), onActivitySelected)
                         
@@ -520,68 +495,70 @@ fun DifficultySection(name: String, activities: List<Activity>, globalStartIndex
 
     if (activities.isEmpty()) return
 
-    Card(
-        shape = RoundedCornerShape(32.dp),
-        colors = CardDefaults.cardColors(containerColor = Color.White.copy(0.9f)),
-        modifier = Modifier.padding(16.dp).fillMaxWidth(),
-        elevation = CardDefaults.cardElevation(4.dp)
+    val completedCount = activities.count { (progress[it.id] ?: 0) > 0 }
+
+    Column(
+        modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 12.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Column(modifier = Modifier.padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-            // Section Header Badge
-            Surface(
-                shape = RoundedCornerShape(16.dp),
-                color = color,
-                modifier = Modifier.padding(bottom = 24.dp).align(Alignment.Start)
+        // Difficulty banner
+        Surface(
+            shape = RoundedCornerShape(24.dp),
+            color = color,
+            shadowElevation = 6.dp
+        ) {
+            Row(
+                modifier = Modifier.padding(horizontal = 20.dp, vertical = 8.dp),
+                verticalAlignment = Alignment.CenterVertically
             ) {
-                Row(modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp), verticalAlignment = Alignment.CenterVertically) {
-                    Icon(Icons.Default.Star, null, tint = Color.White, modifier = Modifier.size(16.dp))
-                    Spacer(modifier = Modifier.width(8.dp))
-                    val completedCount = activities.count { (progress[it.id] ?: 0) > 0 }
-                    Text("$completedCount/${activities.size} $name", color = Color.White, fontFamily = fredoka, fontSize = 14.sp)
+                Text(name, color = Color.White, fontFamily = luckiestGuy, fontSize = 26.sp)
+                Spacer(modifier = Modifier.width(12.dp))
+                Text("$completedCount/${activities.size}", color = Color.White, fontFamily = fredoka, fontSize = 16.sp)
+            }
+        }
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        // Zigzag path, 3 nodes per row, direction alternates each row
+        val rows = activities.chunked(3)
+        rows.forEachIndexed { rowIndex, rowActivities ->
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = if (rowIndex % 2 == 0) Arrangement.Start else Arrangement.End,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                val displayedActivities = if (rowIndex % 2 == 1) rowActivities.reversed() else rowActivities
+
+                displayedActivities.forEachIndexed { nodeIndex, activity ->
+                    val globalIndex = rowIndex * 3 + (if (rowIndex % 2 == 1) rowActivities.size - 1 - nodeIndex else nodeIndex)
+                    val absoluteIndex = globalStartIndex + globalIndex
+                    val isLocked = !unlockedIndices.contains(absoluteIndex)
+
+                    MissionNode(
+                        index = absoluteIndex + 1,
+                        color = color,
+                        stars = progress[activity.id] ?: 0,
+                        isLocked = isLocked,
+                        onClick = { onSelected(activity, name.lowercase(), globalIndex) }
+                    )
+
+                    // Path segment between nodes
+                    if (nodeIndex < displayedActivities.size - 1) {
+                        Box(modifier = Modifier.width(22.dp).height(14.dp).background(color.copy(0.6f), RoundedCornerShape(7.dp)))
+                    }
                 }
             }
 
-            // Zigzag Grid Logic (3 Columns)
-            val rows = activities.chunked(3)
-            rows.forEachIndexed { rowIndex, rowActivities ->
-                Row(
-                    modifier = Modifier.fillMaxWidth().padding(vertical = 12.dp),
-                    horizontalArrangement = if (rowIndex % 2 == 0) Arrangement.Start else Arrangement.End,
-                    verticalAlignment = Alignment.CenterVertically
+            // Vertical path connecting rows
+            if (rowIndex < rows.size - 1) {
+                val isEndAtRight = rowIndex % 2 == 0
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 40.dp),
+                    contentAlignment = if (isEndAtRight) Alignment.CenterEnd else Alignment.CenterStart
                 ) {
-                    val displayedActivities = if (rowIndex % 2 == 1) rowActivities.reversed() else rowActivities
-                    
-                    displayedActivities.forEachIndexed { nodeIndex, activity ->
-                        val globalIndex = rowIndex * 3 + (if (rowIndex % 2 == 1) rowActivities.size - 1 - nodeIndex else nodeIndex)
-                        val absoluteIndex = globalStartIndex + globalIndex
-                        val isLocked = !unlockedIndices.contains(absoluteIndex)
-
-                        MissionNode(
-                            index = absoluteIndex + 1,
-                            color = color,
-                            stars = progress[activity.id] ?: 0,
-                            isLocked = isLocked,
-                            onClick = { if (!isLocked) onSelected(activity, name.lowercase(), globalIndex) }
-                        )
-
-                        // Horizontal path between nodes
-                        if (nodeIndex < displayedActivities.size - 1) {
-                            Box(modifier = Modifier.width(24.dp).height(8.dp).background(color.copy(0.6f), RoundedCornerShape(4.dp)))
-                        }
-                    }
-                }
-                
-                // Vertical path connecting rows
-                if (rowIndex < rows.size - 1) {
-                    val isEndAtRight = rowIndex % 2 == 0
-                    Box(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(horizontal = 32.dp),
-                        contentAlignment = if (isEndAtRight) Alignment.CenterEnd else Alignment.CenterStart
-                    ) {
-                        Box(modifier = Modifier.width(8.dp).height(24.dp).background(color.copy(0.6f), RoundedCornerShape(4.dp)))
-                    }
+                    Box(modifier = Modifier.width(14.dp).height(30.dp).background(color.copy(0.6f), RoundedCornerShape(7.dp)))
                 }
             }
         }
@@ -590,38 +567,45 @@ fun DifficultySection(name: String, activities: List<Activity>, globalStartIndex
 
 @Composable
 fun MissionNode(index: Int, color: Color, stars: Int, isLocked: Boolean, onClick: () -> Unit) {
-    val luckiestGuy = FontFamily(Font(R.font.luckiest_guy))
-    Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.padding(horizontal = 8.dp)) {
-        Box(modifier = Modifier.size(64.dp).shadow(8.dp, CircleShape).background(Color.White, CircleShape).border(4.dp, if(isLocked) Color.LightGray.copy(0.4f) else color.copy(0.4f), CircleShape).clickable { onClick() }, contentAlignment = Alignment.Center) {
-            Box(modifier = Modifier.size(52.dp).background(if(isLocked) Color.LightGray.copy(0.5f) else if(stars > 0) color else color.copy(0.6f), CircleShape), contentAlignment = Alignment.Center) {
-                if (isLocked) {
-                    Icon(Icons.Default.Lock, null, tint = Color.White, modifier = Modifier.size(24.dp))
-                } else {
-                    Text("$index", color = Color.White, fontFamily = luckiestGuy, fontSize = 24.sp)
-                }
-            }
-        }
-        
-        // Progress Stars
-        Row(modifier = Modifier.padding(top = 4.dp)) {
-            repeat(3) { i ->
-                Icon(Icons.Default.Star, null, tint = if(i < stars) Color(0xFFFFD600) else Color.LightGray.copy(0.5f), modifier = Modifier.size(12.dp))
-            }
-        }
-    }
-}
-
-@Composable
-fun LevelLadder() {
-    Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.padding(vertical = 8.dp)) {
-        repeat(3) {
+    val nodeColor = if (isLocked) color.copy(0.4f) else color
+    Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.padding(horizontal = 6.dp)) {
+        // Candy-style node: white ring, colored body, glossy highlight
+        Box(
+            modifier = Modifier
+                .size(76.dp)
+                .shadow(8.dp, CircleShape, spotColor = nodeColor)
+                .background(Color.White, CircleShape)
+                .padding(5.dp)
+                .clip(CircleShape)
+                .background(nodeColor)
+                .clickable(enabled = !isLocked, onClick = onClick),
+            contentAlignment = Alignment.Center
+        ) {
             Box(
                 modifier = Modifier
-                    .width(32.dp)
-                    .height(12.dp)
-                    .border(2.dp, Color(0xFF5D4037), RoundedCornerShape(2.dp))
+                    .fillMaxSize()
+                    .background(Brush.verticalGradient(listOf(Color.White.copy(0.45f), Color.Transparent)))
             )
-            Spacer(modifier = Modifier.height(2.dp))
+            Text(
+                "$index",
+                color = Color.White,
+                fontFamily = FontFamily(Font(R.font.luckiest_guy)),
+                fontSize = 26.sp
+            )
+        }
+
+        // Stars earned on this level
+        Spacer(modifier = Modifier.height(4.dp))
+        Surface(shape = RoundedCornerShape(10.dp), color = Color.White, shadowElevation = 2.dp) {
+            Row(modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)) {
+                repeat(3) { i ->
+                    Text(
+                        "★",
+                        fontSize = 13.sp,
+                        color = if (i < stars) Color(0xFFFFB300) else Color(0xFFD5DCE6)
+                    )
+                }
+            }
         }
     }
 }

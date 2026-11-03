@@ -13,8 +13,7 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.KokebFidel"
-        android:pageSizeCompatibility="supported"
-        tools:targetApi="35">
+        tools:targetApi="36">
         
         <activity
             android:name=".MainActivity"
